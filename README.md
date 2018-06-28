@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/AnthonyNahas/@firebaseui/ng-bootstrap/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/firebaseui/ng-bootstrap/master/demo/src/assets/logo.svg">
 </p>
 
 # @firebaseui/ng-bootstrap - Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap
