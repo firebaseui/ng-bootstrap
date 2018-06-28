@@ -1,0 +1,49 @@
+{
+  "generator-ngx-library": {
+    "version": "6.2.1",
+    "authorName": "Anthony Nahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "AnthonyNahas",
+    "githubRepoName": "@firebaseui/ng-bootstrap",
+    "projectName": "@firebaseui/ng-bootstrap",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap",
+    "projectKeywords": [
+      "ng",
+      "angular",
+      "library",
+      "bootstrap",
+      "ng-bootstrap",
+      "firebase",
+      "firebase authentication",
+      "sign in",
+      "sign up",
+      "register",
+      "forgot password",
+      "email confirmation",
+      "sign with google-facebook-twitter-githbub"
+    ],
+    "ngVersion": "6.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [
+      "@ng-bootstrap/ng-bootstrap",
+      "font-awesome"
+    ],
+    "additionalPackageFiles": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "ng",
+    "testingFramework": "jest",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "config/karma.conf.js",
+      "config/webpack.test.js",
+      "config/karma-test-shim.js"
+    ],
+    "deleteExclusions": []
+  }
+}
