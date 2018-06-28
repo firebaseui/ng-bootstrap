@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": [],
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@ng-bootstrap/ng-bootstrap": [
+        "../node_modules/@ng-bootstrap/ng-bootstrap"
+      ],
+      "font-awesome": [
+        "../node_modules/font-awesome"
+      ]
+    }
+  },
+  "exclude": [
+    "testing/*",
+    "test.ts",
+    "setupJest.ts",
+    "jestGlobalMocks.ts",
+    "**/*.spec.ts"
+  ]
+}
