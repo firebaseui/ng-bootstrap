@@ -4,12 +4,15 @@
 
 # @firebaseui/ng-bootstrap - Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap
 
-[![npm version](https://badge.fury.io/js/@firebaseui/ng-bootstrap.svg)](https://badge.fury.io/js/@firebaseui/ng-bootstrap),
-[![Build Status](https://travis-ci.org/AnthonyNahas/@firebaseui/ng-bootstrap.svg?branch=master)](https://travis-ci.org/AnthonyNahas/@firebaseui/ng-bootstrap)
-[![Coverage Status](https://coveralls.io/repos/github/AnthonyNahas/@firebaseui/ng-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/AnthonyNahas/@firebaseui/ng-bootstrap?branch=master)
-[![dependency Status](https://david-dm.org/AnthonyNahas/@firebaseui/ng-bootstrap/status.svg)](https://david-dm.org/AnthonyNahas/@firebaseui/ng-bootstrap)
-[![devDependency Status](https://david-dm.org/AnthonyNahas/@firebaseui/ng-bootstrap/dev-status.svg?branch=master)](https://david-dm.org/AnthonyNahas/@firebaseui/ng-bootstrap#info=devDependencies)
-[![Greenkeeper Badge](https://badges.greenkeeper.io/AnthonyNahas/@firebaseui/ng-bootstrap.svg)](https://greenkeeper.io/)
+[![npm version](https://badge.fury.io/js/%40firebaseui%2Fng-bootstrap.svg)](https://badge.fury.io/js/%40firebaseui%2Fng-bootstrap)
+[![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://firebaseui.github.io/ng-bootstrap)
+[![Join the chat at https://gitter.im/firebaseui/Lobby](https://badges.gitter.im/firebaseui/Lobby.svg)](https://gitter.im/firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/firebaseui/ng-bootstrap/master.svg?label=circleci)](https://circleci.com/gh/firebaseui/ng-bootstrap)
+[![Coverage Status](https://coveralls.io/repos/github/firebaseui/ng-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/firebaseui/ng-bootstrap?branch=master)
+[![dependency Status](https://david-dm.org/firebaseui/ng-bootstrap/status.svg)](https://david-dm.org/firebaseui/ng-bootstrap)
+[![devDependency Status](https://david-dm.org/firebaseui/ng-bootstrap/dev-status.svg?branch=master)](https://david-dm.org/firebaseui/ng-bootstrap#info=devDependencies)
+[![Greenkeeper Badge](https://badges.greenkeeper.io/firebaseui/ng-bootstrap.svg)](https://greenkeeper.io/)
+[![license](https://img.shields.io/github/license/firebaseui/ng-bootstrap.svg?style=flat-square)](https://github.com/firebaseui/ng-bootstrap/blob/master/LICENSE)
 
 ## Demo
 
