@@ -132,23 +132,24 @@
           </div>
         </div>
 
-        <div class="row justify-content-md-center">
-          <div class="col">
-            <button class="btn btn-primary"
-                    type="submit">
-              Log in
-            </button>
-          </div>
 
-          <div class="col">
-            <button *ngIf="guestEnabled"
-                    type="button"
-                    class="btn btn-outline-secondary"
-                    (click)="selectResetPasswordTab()">
-              Forgot Password?
-            </button>
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="align-self-start">
+              <button class="btn btn-primary"
+                      type="submit">
+                Log in
+              </button>
+            </div>
+            <div class="align-self-end">
+              <button *ngIf="guestEnabled"
+                      type="button"
+                      class="btn btn-outline-secondary"
+                      (click)="selectResetPasswordTab()">
+                Forgot Password?
+              </button>
+            </div>
           </div>
-
         </div>
 
       </form>
@@ -271,16 +272,24 @@
         <!--</div>-->
         <!--</div>-->
 
-        <button class="btn btn-primary"
-                type="submit">
-          Register
-        </button>
-        <button *ngIf="guestEnabled"
-                class="btn btn-outline-secondary"
-                (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
-          <i class="fa fa-fingerprint"></i>
-          continue as guest
-        </button>
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="align-self-start">
+              <button class="btn btn-primary"
+                      type="submit">
+                Register
+              </button>
+            </div>
+            <div class="align-self-end">
+              <button *ngIf="guestEnabled"
+                      class="btn btn-outline-secondary"
+                      (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
+                <i class="fa fa-fingerprint"></i>
+                continue as guest
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
     </ng-template>
   </ngb-tab>
