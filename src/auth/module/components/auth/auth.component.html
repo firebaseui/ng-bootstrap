@@ -2,14 +2,15 @@
   <!--Reset password tab-->
   <ngb-tab *ngIf="passwordResetWished" title="Reset Password" id="reset_password">
     <ng-template ngbTabContent>
-      <form #formDir="ngForm" [formGroup]="resetPasswordFormGroup"
+      <form #resetPasswordForm="ngForm"
+            [formGroup]="resetPasswordFormGroup"
             (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
         <div class="form-group is-invalid">
           <label for="validationResetEmail">E-mail</label>
           <input class="form-control"
                  [class.is-valid]="resetPasswordEmailFormControl.valid && resetPasswordEmailFormControl.dirty"
-                 [class.is-invalid]="resetPasswordEmailFormControl.errors  && (resetPasswordEmailFormControl.dirty || formDir.submitted)"
+                 [class.is-invalid]="resetPasswordEmailFormControl.errors  && (resetPasswordEmailFormControl.dirty || resetPasswordForm.submitted)"
                  id="validationResetEmail"
                  [formControl]="resetPasswordEmailFormControl"
                  placeholder="E-mail"
@@ -19,7 +20,8 @@
 
           <!--error msgs-->
           <div class="invalid-feedback"
-               *ngIf="resetPasswordEmailFormControl.errors && (resetPasswordEmailFormControl.dirty || resetPasswordEmailFormControl.touched || formDir.submitted)">
+               *ngIf="resetPasswordEmailFormControl.errors
+               && (resetPasswordEmailFormControl.dirty || resetPasswordEmailFormControl.touched || resetPasswordForm.submitted)">
             <p *ngIf="resetPasswordEmailFormControl.hasError('required')">
               E-mail is required
             </p>
@@ -51,7 +53,8 @@
   <ngb-tab>
     <ng-template ngbTabTitle>Sign in</ng-template>
     <ng-template ngbTabContent>
-      <form [formGroup]="signInFormGroup"
+      <form #signInPasswordForm="ngForm"
+            [formGroup]="signInFormGroup"
             (ngSubmit)="signInFormGroup.valid &&
               authProcess.signInWith
               (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
@@ -61,7 +64,8 @@
           <div class="input-group">
             <input class="form-control"
                    [class.is-valid]="signInEmailFormControl.valid && signInEmailFormControl.dirty"
-                   [class.is-invalid]="signInEmailFormControl.errors  && signInEmailFormControl.dirty"
+                   [class.is-invalid]="signInEmailFormControl.errors
+                   && (signInEmailFormControl.dirty || signInPasswordForm.submitted)"
                    id="validationSignInEmail"
                    [formControl]="signInEmailFormControl"
                    placeholder="E-mail"
@@ -71,7 +75,8 @@
 
             <!--error msgs-->
             <div class="invalid-feedback"
-                 *ngIf="signInEmailFormControl.errors && (signInEmailFormControl.dirty || signInEmailFormControl.touched)">
+                 *ngIf="signInEmailFormControl.errors
+                 && (signInEmailFormControl.dirty || signInEmailFormControl.touched || signInPasswordForm.submitted)">
               <p *ngIf="signInEmailFormControl.hasError('required')">
                 E-mail is required
               </p>
@@ -102,7 +107,8 @@
             <!--</small>-->
 
             <div class="invalid-feedback"
-                 *ngIf="sigInPasswordFormControl.errors && (sigInPasswordFormControl.dirty || sigInPasswordFormControl.touched)">
+                 *ngIf="sigInPasswordFormControl.errors
+                 && (sigInPasswordFormControl.dirty || sigInPasswordFormControl.touched || signInPasswordForm.submitted)">
               <p *ngIf="sigInPasswordFormControl.hasError('required')">
                 Please do not forget the password
               </p>
