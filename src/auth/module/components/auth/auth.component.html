@@ -2,20 +2,31 @@
   <!--Reset password tab-->
   <ngb-tab *ngIf="passwordResetWished" title="Reset Password" id="reset_password">
     <ng-template ngbTabContent>
-      <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
+      <form #formDir="ngForm" [formGroup]="resetPasswordFormGroup"
+            (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">@</span>
-          </div>
-          <input type="text"
-                 class="form-control"
-                 [readonly]="passReset"
-                 formControlName="email"
-                 placeholder="email"
-                 aria-label="email"
-                 aria-describedby="basic-addon1"
+        <div class="form-group is-invalid">
+          <label for="validationResetEmail">E-mail</label>
+          <input class="form-control"
+                 [class.is-valid]="resetPasswordEmailFormControl.valid && resetPasswordEmailFormControl.dirty"
+                 [class.is-invalid]="resetPasswordEmailFormControl.errors  && (resetPasswordEmailFormControl.dirty || formDir.submitted)"
+                 id="validationResetEmail"
+                 [formControl]="resetPasswordEmailFormControl"
+                 placeholder="E-mail"
+                 type="email"
+                 aria-describedby="inputGroupPrepend3"
                  required>
+
+          <!--error msgs-->
+          <div class="invalid-feedback"
+               *ngIf="resetPasswordEmailFormControl.errors && (resetPasswordEmailFormControl.dirty || resetPasswordEmailFormControl.touched || formDir.submitted)">
+            <p *ngIf="resetPasswordEmailFormControl.hasError('required')">
+              E-mail is required
+            </p>
+            <p *ngIf="resetPasswordEmailFormControl.hasError('pattern')">
+              Please enter a valid e-mail address
+            </p>
+          </div>
         </div>
 
         <div class="text-center">
@@ -26,11 +37,10 @@
           </button>
         </div>
 
-        <div class="card-footer">
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-          </div>
+
+        <div *ngIf="authProcess.isLoading" class="progress mt-2">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
         </div>
 
       </form>
@@ -69,43 +79,42 @@
                 Please enter a valid e-mail address
               </p>
             </div>
-
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="validationSignInPassword">Password</label>
-            <div class="input-group">
-              <input class="form-control"
-                     [class.is-valid]="sigInPasswordFormControl.valid"
-                     [class.is-invalid]="sigInPasswordFormControl.errors"
-                     id="validationSignInPassword"
-                     type="password"
-                     placeholder="password"
-                     name="password"
-                     [formControl]="sigInPasswordFormControl"
-                     aria-describedby="inputGroupPrepend4"
-                     required>
+        <div class="form-group">
+          <label for="validationSignInPassword">Password</label>
+          <div class="input-group">
+            <input class="form-control"
+                   [class.is-valid]="sigInPasswordFormControl.valid"
+                   [class.is-invalid]="sigInPasswordFormControl.errors"
+                   id="validationSignInPassword"
+                   type="password"
+                   placeholder="password"
+                   name="password"
+                   [formControl]="sigInPasswordFormControl"
+                   aria-describedby="inputGroupPrepend4"
+                   required>
 
-              <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
-              <!--Your password must be 8-25 characters long, contain letters and numbers,-->
-              <!--and must not contain spaces, special characters, or emoji.-->
-              <!--</small>-->
+            <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
+            <!--Your password must be 8-25 characters long, contain letters and numbers,-->
+            <!--and must not contain spaces, special characters, or emoji.-->
+            <!--</small>-->
 
-              <div class="invalid-feedback"
-                   *ngIf="sigInPasswordFormControl.errors && (sigInPasswordFormControl.dirty || sigInPasswordFormControl.touched)">
-                <p *ngIf="sigInPasswordFormControl.hasError('required')">
-                  Please do not forget the password
-                </p>
-                <p *ngIf="sigInPasswordFormControl.hasError('minlength')">
-                  The password must be at least 6 characters
-                  long.
-                </p>
-                <p *ngIf="sigInPasswordFormControl.hasError('maxlength')">
-                  The password can not be longer than 25 characters.
-                </p>
-              </div>
-
+            <div class="invalid-feedback"
+                 *ngIf="sigInPasswordFormControl.errors && (sigInPasswordFormControl.dirty || sigInPasswordFormControl.touched)">
+              <p *ngIf="sigInPasswordFormControl.hasError('required')">
+                Please do not forget the password
+              </p>
+              <p *ngIf="sigInPasswordFormControl.hasError('minlength')">
+                The password must be at least 6 characters
+                long.
+              </p>
+              <p *ngIf="sigInPasswordFormControl.hasError('maxlength')">
+                The password can not be longer than 25 characters.
+              </p>
             </div>
+
           </div>
         </div>
 
