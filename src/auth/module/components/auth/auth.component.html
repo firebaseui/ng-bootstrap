@@ -1,43 +1,38 @@
-<ngb-tabset>
+<ngb-tabset #tabs>
   <!--Reset password tab-->
-  <ngb-tab *ngIf="!passwordResetWished" title="Reset Password">
+  <ngb-tab *ngIf="passwordResetWished" title="Reset Password" id="reset_password">
     <ng-template ngbTabContent>
       <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Hello from <span class="highlight">ng-bootstrap-auth-firebaseui</span> Angular
-              Library!</h3>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-              </div>
-              <input type="text"
-                     class="form-control"
-                     [readonly]="passReset"
-                     formControlName="email"
-                     placeholder="email"
-                     aria-label="email"
-                     aria-describedby="basic-addon1"
-                     required>
-            </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text"
+                 class="form-control"
+                 [readonly]="passReset"
+                 formControlName="email"
+                 placeholder="email"
+                 aria-label="email"
+                 aria-describedby="basic-addon1"
+                 required>
+        </div>
 
-            <div class="text-center">
-              <button class="btn btn-primary"
-                      type="submit"
-                      [disabled]="passReset">
-                Reset
-              </button>
-            </div>
+        <div class="text-center">
+          <button class="btn btn-primary"
+                  type="submit"
+                  [disabled]="passReset">
+            Reset
+          </button>
+        </div>
 
-            <div class="card-footer">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-              </div>
-            </div>
+        <div class="card-footer">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
           </div>
         </div>
+
       </form>
     </ng-template>
   </ngb-tab>
@@ -50,306 +45,211 @@
             (ngSubmit)="signInFormGroup.valid &&
               authProcess.signInWith
               (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Hello from <span class="highlight">ng-bootstrap-auth-firebaseui</span> Angular
-              Library!</h3>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon2">@</span>
-              </div>
-              <input type="text"
-                     class="form-control"
-                     formControlName="email"
-                     placeholder="email"
-                     aria-label="email"
-                     aria-describedby="basic-addon2"
+        <div class="form-group">
+          <label for="validationSignInEmail">E-mail</label>
+          <div class="input-group">
+            <input class="form-control"
+                   [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
+                   [class.is-invalid]="sigUpEmailFormControl.errors  && sigUpEmailFormControl.dirty"
+                   id="validationSignInEmail"
+                   [formControl]="sigUpEmailFormControl"
+                   placeholder="E-mail"
+                   type="email"
+                   aria-describedby="inputGroupPrepend3"
+                   required>
+
+            <!--error msgs-->
+            <div class="invalid-feedback"
+                 *ngIf="sigUpEmailFormControl.errors && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched)">
+              <p *ngIf="sigUpEmailFormControl.hasError('required')">
+                E-mail is required
+              </p>
+              <p *ngIf="sigUpEmailFormControl.hasError('pattern')">
+                Please enter a valid e-mail address
+              </p>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="validationSignInPassword">Password</label>
+            <div class="input-group">
+              <input class="form-control"
+                     [class.is-valid]="sigInPasswordFormControl.valid"
+                     [class.is-invalid]="sigInPasswordFormControl.errors"
+                     id="validationSignInPassword"
+                     type="password"
+                     placeholder="password"
+                     name="password"
+                     [formControl]="sigInPasswordFormControl"
+                     aria-describedby="inputGroupPrepend4"
                      required>
-            </div>
 
-            <div class="form-group mb-3">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
+              <!--Your password must be 8-25 characters long, contain letters and numbers,-->
+              <!--and must not contain spaces, special characters, or emoji.-->
+              <!--</small>-->
+
+              <div class="invalid-feedback"
+                   *ngIf="sigInPasswordFormControl.errors && (sigInPasswordFormControl.dirty || sigInPasswordFormControl.touched)">
+                <p *ngIf="sigInPasswordFormControl.hasError('required')">
+                  Please do not forget the password
+                </p>
+                <p *ngIf="sigInPasswordFormControl.hasError('minlength')">
+                  The password must be at least 6 characters
+                  long.
+                </p>
+                <p *ngIf="sigInPasswordFormControl.hasError('maxlength')">
+                  The password can not be longer than 25 characters.
+                </p>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-              </div>
+
             </div>
           </div>
         </div>
+
+        <div class="row justify-content-md-center">
+          <div class="col">
+            <button class="btn btn-primary"
+                    type="submit">
+              Log in
+            </button>
+          </div>
+
+          <div class="col">
+            <button *ngIf="guestEnabled"
+                    class="btn btn-outline-secondary"
+                    (click)="selectResetPasswordTab()">
+              Forgot Password?
+            </button>
+          </div>
+
+        </div>
+
       </form>
     </ng-template>
   </ngb-tab>
 
   <!--Register - sign up tab-->
   <ngb-tab>
-    <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+    <ng-template ngbTabTitle>Register</ng-template>
     <ng-template ngbTabContent>
-      asf
+      <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
+          authProcess.signUp
+          (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
+        <div class="form-group">
+          <label for="validationName">First name</label>
+          <input class="form-control"
+                 [class.is-valid]="sigUpNameFormControl.valid && sigUpNameFormControl.dirty"
+                 [class.is-invalid]="sigUpNameFormControl.errors && sigUpNameFormControl.dirty"
+                 id="validationName"
+                 type="text"
+                 minlength="2"
+                 maxlength="30"
+                 [formControl]="sigUpNameFormControl"
+                 placeholder="Name"
+                 required>
+          <div class="invalid-feedback"
+               *ngIf="sigUpNameFormControl.errors && (sigUpNameFormControl.dirty || sigUpNameFormControl.touched)">
+            <p *ngIf="sigUpNameFormControl.hasError('required')">
+              Name is required
+            </p>
+            <p *ngIf="sigUpNameFormControl.hasError('minlength')">
+              The name is too short!
+            </p>
+            <p *ngIf="sigUpNameFormControl.hasError('maxlength')">
+              The name is too long!
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="validationRegisterEmail">E-mail</label>
+          <div class="input-group">
+            <input class="form-control"
+                   [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
+                   [class.is-invalid]="sigUpEmailFormControl.errors  && sigUpEmailFormControl.dirty"
+                   id="validationRegisterEmail"
+                   [formControl]="sigUpEmailFormControl"
+                   placeholder="E-mail"
+                   type="email"
+                   aria-describedby="inputGroupPrepend3"
+                   required>
+
+            <!--error msgs-->
+            <div class="invalid-feedback"
+                 *ngIf="sigUpEmailFormControl.errors && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched)">
+              <p *ngIf="sigUpEmailFormControl.hasError('required')">
+                E-mail is required
+              </p>
+              <p *ngIf="sigUpEmailFormControl.hasError('pattern')">
+                Please enter a valid e-mail address
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="validationRegisterPassword">Password</label>
+          <div class="input-group">
+            <input class="form-control"
+                   [class.is-valid]="sigUpPasswordFormControl.valid"
+                   [class.is-invalid]="sigUpPasswordFormControl.errors"
+                   id="validationRegisterPassword"
+                   type="password"
+                   placeholder="password"
+                   name="password"
+                   [formControl]="sigUpPasswordFormControl"
+                   aria-describedby="inputGroupPrepend4"
+                   required>
+
+            <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
+            <!--Your password must be 8-25 characters long, contain letters and numbers,-->
+            <!--and must not contain spaces, special characters, or emoji.-->
+            <!--</small>-->
+
+            <div class="invalid-feedback"
+                 *ngIf="sigUpPasswordFormControl.errors && (sigUpPasswordFormControl.dirty || sigUpPasswordFormControl.touched)">
+              <p *ngIf="sigUpPasswordFormControl.hasError('required')">
+                Please do not forget the password
+              </p>
+              <p *ngIf="sigUpPasswordFormControl.hasError('minlength')">
+                The password must be at least 6 characters
+                long.
+              </p>
+              <p *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
+                The password can not be longer than 25 characters.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!--<div class="form-group">-->
+        <!--<div class="form-check">-->
+        <!--<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>-->
+        <!--<label class="form-check-label" for="invalidCheck3">-->
+        <!--Agree to terms and conditions-->
+        <!--</label>-->
+        <!--<div class="invalid-feedback">-->
+        <!--You must agree before submitting.-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <button class="btn btn-primary"
+                type="submit">
+          Register
+        </button>
+        <button *ngIf="guestEnabled"
+                class="btn btn-outline-secondary"
+                (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
+          <i class="fa fa-fingerprint"></i>
+          continue as guest
+        </button>
+      </form>
     </ng-template>
   </ngb-tab>
 
 </ngb-tabset>
-
-<!--<mat-tab-group [color]="color">-->
-<!--<mat-tab *ngIf="passwordResetWished" label="Reset Password">-->
-<!--<form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">-->
-
-<!--<mat-card>-->
-<!--&lt;!&ndash;card header&ndash;&gt;-->
-<!--<mat-card-header fxLayoutAlign="end">-->
-<!--<button mat-icon-button-->
-<!--[color]="color"-->
-<!--matTooltip="close"-->
-<!--matTooltipPosition="above"-->
-<!--(click)="passwordResetWished = false">-->
-<!--<mat-icon>close</mat-icon>-->
-<!--</button>-->
-<!--</mat-card-header>-->
-
-<!--<mat-card-content>-->
-<!--<mat-form-field class="full-width" appearance="outline">-->
-<!--&lt;!&ndash;<mat-label>Reset e-mail address to password</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--[readonly]="passReset"-->
-<!--formControlName="email"-->
-<!--required>-->
-<!--<mat-icon matSuffix [color]="color">email</mat-icon>-->
-<!--<mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">-->
-<!--E-mail is required to reset the password!-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="resetPasswordEmailFormControl.hasError('pattern')">-->
-<!--Please enter a valid e-mail address-->
-<!--</mat-error>-->
-<!--</mat-form-field>-->
-<!--</mat-card-content>-->
-<!--<mat-card-actions fxLayoutAlign="center">-->
-<!--<button mat-raised-button-->
-<!--type="submit"-->
-<!--[color]="color"-->
-<!--[disabled]="passReset">-->
-<!--Reset-->
-<!--</button>-->
-<!--</mat-card-actions>-->
-<!--<mat-card-footer *ngIf="passReset" fxLayoutAlign="center">-->
-<!--<p>Reset requested. Check your e-mail instructions.</p>-->
-<!--</mat-card-footer>-->
-<!--<mat-card-footer>-->
-<!--<mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>-->
-<!--</mat-card-footer>-->
-<!--</mat-card>-->
-<!--</form>-->
-<!--</mat-tab>-->
-<!--<mat-tab label="Sign in">-->
-<!--<mat-card>-->
-<!--<mat-card-content>-->
-<!--<form [formGroup]="signInFormGroup"-->
-<!--(ngSubmit)="signInFormGroup.valid &&-->
-<!--authProcess.signInWith-->
-<!--(authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">-->
-<!--<div fxLayout="column" fxLayoutAlign="center center">-->
-<!--<mat-form-field appearance="outline">-->
-<!--&lt;!&ndash;<mat-label>E-mail</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--placeholder="E-mail"-->
-<!--formControlName="email"-->
-<!--required>-->
-<!--<mat-icon matSuffix [color]="color">email</mat-icon>-->
-<!--<mat-error *ngIf="signInEmailFormControl.hasError('required')">-->
-<!--E-mail is required-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="signInEmailFormControl.hasError('pattern')">-->
-<!--Please enter a valid e-mail address-->
-<!--</mat-error>-->
-<!--</mat-form-field>-->
-
-<!--<mat-form-field appearance="outline">-->
-<!--&lt;!&ndash;<mat-label>Password</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--type="password"-->
-<!--placeholder="Password"-->
-<!--minlength="6"-->
-<!--maxlength="25"-->
-<!--formControlName="password"-->
-<!--required>-->
-<!--<mat-icon matSuffix [color]="color">lock</mat-icon>-->
-<!--<mat-hint align="end" aria-live="polite">-->
-<!--{{signInFormGroup.value.password.length}} / 25-->
-<!--</mat-hint>-->
-<!--<mat-error *ngIf="sigInPasswordFormControl.hasError('required')">-->
-<!--Please do not forget the password-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">-->
-<!--The password must be at least 6 characters long.-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigInPasswordFormControl.hasError('maxlength')">-->
-<!--The password must not exceed 25 characters-->
-<!--</mat-error>-->
-<!--</mat-form-field>-->
-
-<!--<button mat-raised-button-->
-<!--style="margin-top: 20px"-->
-<!--type="submit"-->
-<!--class="space-top"-->
-<!--[color]="color">-->
-<!--Log In-->
-<!--</button>-->
-
-<!--</div>-->
-<!--</form>-->
-
-<!--<div fxLayoutAlign="center">-->
-<!--<button mat-button-->
-<!--class="space-top"-->
-<!--[color]="color"-->
-<!--(click)="passwordResetWished = true">-->
-<!--Forgot Password?-->
-<!--</button>-->
-<!--</div>-->
-
-<!--</mat-card-content>-->
-<!--<mat-card-footer *ngIf="authProcess.isLoading">-->
-<!--<mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
-<!--</mat-card-footer>-->
-<!--</mat-card>-->
-<!--</mat-tab>-->
-
-<!--&lt;!&ndash;tab register&ndash;&gt;-->
-<!--<mat-tab label="Register">-->
-<!--<mat-card>-->
-<!--<mat-card-title>Registration</mat-card-title>-->
-<!--<div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>-->
-<!--<ng-template #register>-->
-<!--<mat-card-content fxLayout="column" fxLayoutAlign="center">-->
-<!--<form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&-->
-<!--authProcess.signUp-->
-<!--(signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">-->
-<!--<div fxLayout="column" fxLayoutAlign="center">-->
-<!--&lt;!&ndash;name&ndash;&gt;-->
-<!--<mat-form-field appearance="outline" label="Name">-->
-<!--&lt;!&ndash;labels will work only with @angular/material@6.2.0 &ndash;&gt;-->
-<!--&lt;!&ndash;<mat-label>Name</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--label="Name"-->
-<!--placeholder="Name"-->
-<!--title="Name"-->
-<!--minlength="2"-->
-<!--maxlength="30"-->
-<!--[formControl]="sigUpNameFormControl"-->
-<!--required>-->
-<!--<mat-icon matSuffix [color]="color">person</mat-icon>-->
-<!--<mat-hint align="end" aria-live="polite">-->
-<!--{{signUpFormGroup.value.name.length}} / 25-->
-<!--</mat-hint>-->
-<!--<mat-error *ngIf="sigUpNameFormControl.hasError('required')">-->
-<!--Name is required-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">-->
-<!--The name is too short!-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">-->
-<!--The name is too long!-->
-<!--</mat-error>-->
-<!--</mat-form-field>-->
-
-<!--&lt;!&ndash;email&ndash;&gt;-->
-<!--<mat-form-field appearance="outline">-->
-<!--&lt;!&ndash;<mat-label>E-mail</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--placeholder="E-mail"-->
-<!--type="email"-->
-<!--[formControl]="sigUpEmailFormControl">-->
-<!--<mat-icon matSuffix [color]="color">email</mat-icon>-->
-<!--<mat-error *ngIf="sigUpEmailFormControl.hasError('required')">-->
-<!--E-mail is required-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigUpEmailFormControl.hasError('pattern')">-->
-<!--Please enter a valid e-mail address-->
-<!--</mat-error>-->
-<!--</mat-form-field>-->
-
-<!--&lt;!&ndash;password&ndash;&gt;-->
-<!--<div fxLayout="column">-->
-
-<!--<mat-form-field appearance="outline">-->
-<!--&lt;!&ndash;<mat-label>Password</mat-label>&ndash;&gt;-->
-<!--<input matInput-->
-<!--type="password"-->
-<!--placeholder="password"-->
-<!--name="password"-->
-<!--[formControl]="sigUpPasswordFormControl"-->
-<!--required>-->
-<!--<mat-icon matSuffix [color]="color">lock</mat-icon>-->
-
-<!--<mat-hint align="end" aria-live="polite">-->
-<!--{{signUpFormGroup.value.password.length}} / 25-->
-<!--</mat-hint>-->
-
-<!--<mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">-->
-<!--Please do not forget the password-->
-<!--</mat-error>-->
-
-<!--<mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">-->
-<!--The password must be at least 6 characters long.-->
-<!--</mat-error>-->
-<!--<mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')" class="cut-text">-->
-<!--The password can not be longer than 25 characters.-->
-<!--</mat-error>-->
-
-<!--</mat-form-field>-->
-
-<!--<mat-password-strength-->
-<!--[password]="signUpFormGroup.value.password"-->
-<!--[externalError]="sigUpPasswordFormControl.dirty">-->
-<!--</mat-password-strength>-->
-
-<!--<div fxLayoutAlign="center center" style="margin-top: 0.5rem">-->
-<!--<mat-checkbox>I agree to the Terms of Service and Conditions</mat-checkbox>-->
-<!--<mat-checkbox>I have read and agree to the Privacy Policy</mat-checkbox>-->
-<!--</div>-->
-
-<!--</div>-->
-
-<!--<button mat-raised-button-->
-<!--style="margin-top: 20px"-->
-<!--type="submit"-->
-<!--[color]="color">-->
-<!--Register-->
-<!--</button>-->
-
-<!--</div>-->
-<!--</form>-->
-
-<!--<button *ngIf="guestEnabled"-->
-<!--mat-button-->
-<!--style="margin-top: 20px"-->
-<!--[color]="color"-->
-<!--(click)="authProcess.signInWith(authProvider.ANONYMOUS)">-->
-<!--<mat-icon>fingerprint</mat-icon>-->
-<!--continue as guest-->
-<!--</button>-->
-
-<!--</mat-card-content>-->
-
-<!--<mat-card-footer *ngIf="authProcess.isLoading">-->
-<!--<mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
-<!--</mat-card-footer>-->
-
-<!--</ng-template>-->
-
-<!--&lt;!&ndash;confirm template&ndash;&gt;-->
-<!--<ng-template #confirm>-->
-<!--<ngx-auth-firebaseui-email-confirmation [email]="authProcess.emailToConfirm">-->
-<!--</ngx-auth-firebaseui-email-confirmation>-->
-<!--</ng-template>-->
-
-<!--</mat-card>-->
-<!--</mat-tab>-->
-<!--</mat-tab-group>-->
-<!--<mat-divider></mat-divider>-->
-<!--<ngx-auth-firebaseui-providers [providers]="providers"></ngx-auth-firebaseui-providers>-->
