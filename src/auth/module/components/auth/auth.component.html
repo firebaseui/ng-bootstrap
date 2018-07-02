@@ -50,10 +50,10 @@
           <label for="validationSignInEmail">E-mail</label>
           <div class="input-group">
             <input class="form-control"
-                   [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
-                   [class.is-invalid]="sigUpEmailFormControl.errors  && sigUpEmailFormControl.dirty"
+                   [class.is-valid]="signInEmailFormControl.valid && signInEmailFormControl.dirty"
+                   [class.is-invalid]="signInEmailFormControl.errors  && signInEmailFormControl.dirty"
                    id="validationSignInEmail"
-                   [formControl]="sigUpEmailFormControl"
+                   [formControl]="signInEmailFormControl"
                    placeholder="E-mail"
                    type="email"
                    aria-describedby="inputGroupPrepend3"
@@ -61,11 +61,11 @@
 
             <!--error msgs-->
             <div class="invalid-feedback"
-                 *ngIf="sigUpEmailFormControl.errors && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched)">
-              <p *ngIf="sigUpEmailFormControl.hasError('required')">
+                 *ngIf="signInEmailFormControl.errors && (signInEmailFormControl.dirty || signInEmailFormControl.touched)">
+              <p *ngIf="signInEmailFormControl.hasError('required')">
                 E-mail is required
               </p>
-              <p *ngIf="sigUpEmailFormControl.hasError('pattern')">
+              <p *ngIf="signInEmailFormControl.hasError('pattern')">
                 Please enter a valid e-mail address
               </p>
             </div>
