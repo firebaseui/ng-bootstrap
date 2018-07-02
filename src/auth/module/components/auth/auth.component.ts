@@ -1,10 +1,10 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild} from '@angular/core';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireAuth} from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
+import {NgbTabset} from '@ng-bootstrap/ng-bootstrap';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -21,6 +21,9 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 })
 
 export class AuthComponent implements OnInit, OnDestroy {
+
+  @ViewChild('tabs') public tabs: NgbTabset;
+
 
   @Input()
   providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
@@ -89,6 +92,13 @@ export class AuthComponent implements OnInit, OnDestroy {
     console.log('PasswordResetEmail sent');
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => this.passReset = true);
+  }
+
+  public selectResetPasswordTab() {
+    this.passwordResetWished = true;
+    setTimeout(() => {
+      this.tabs.select('reset_password');
+    }, 1);
   }
 
   private _initSignInFormGroupBuilder() {

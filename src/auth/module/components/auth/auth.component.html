@@ -3,6 +3,7 @@
   <ngb-tab *ngIf="passwordResetWished" title="Reset Password" id="reset_password">
     <ng-template ngbTabContent>
       <form #resetPasswordForm="ngForm"
+            class="mt-3"
             [formGroup]="resetPasswordFormGroup"
             (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
@@ -39,6 +40,11 @@
           </button>
         </div>
 
+        <div *ngIf="passReset" class="mt-2 mx-auto">
+          <ngb-alert type="success">
+            Reset requested. Check your <strong>e-mail</strong> instructions!
+          </ngb-alert>
+        </div>
 
         <div *ngIf="authProcess.isLoading" class="progress mt-2">
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
@@ -54,6 +60,7 @@
     <ng-template ngbTabTitle>Sign in</ng-template>
     <ng-template ngbTabContent>
       <form #signInPasswordForm="ngForm"
+            class="mt-3"
             [formGroup]="signInFormGroup"
             (ngSubmit)="signInFormGroup.valid &&
               authProcess.signInWith
@@ -153,6 +160,7 @@
     <ng-template ngbTabTitle>Register</ng-template>
     <ng-template ngbTabContent>
       <form #signUpPasswordForm="ngForm"
+            class="mt-3"
             [formGroup]="signUpFormGroup"
             (ngSubmit)="signUpFormGroup.valid &&
           authProcess.signUp

@@ -1,19 +1,18 @@
-import {EventEmitter, Inject, Injectable, InjectionToken} from '@angular/core';
+import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import * as firebase from 'firebase';
+import {User, UserInfo} from 'firebase';
+
+import {Accounts} from '../components/enums';
+import {NgBootstrapAuthFirebaseUIConfig, NgBootstrapAuthFirebaseUIConfigToken} from '../../..';
 // import User = firebase.User;
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
-
-import {User, UserInfo} from 'firebase';
-
-import {Accounts} from '../components/enums';
-import {NgBootstrapAuthFirebaseUIConfig, NgBootstrapAuthFirebaseUIConfigToken} from '../../..';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -47,9 +46,17 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns
    */
   public resetPassword(email: string) {
+    this.isLoading = true;
     return this.auth.auth.sendPasswordResetEmail(email)
-      .then(() => console.log('email sent'))
-      .catch((error) => this.onErrorEmitter.next(error));
+      .then(() => {
+        this.isLoading = false;
+        console.log('email sent');
+        return;
+      })
+      .catch((error) => {
+        this.isLoading = false;
+        return this.onErrorEmitter.next(error);
+      });
   }
 
   /**
