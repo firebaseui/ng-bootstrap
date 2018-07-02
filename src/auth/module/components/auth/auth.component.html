@@ -91,8 +91,9 @@
           <label for="validationSignInPassword">Password</label>
           <div class="input-group">
             <input class="form-control"
-                   [class.is-valid]="sigInPasswordFormControl.valid"
-                   [class.is-invalid]="sigInPasswordFormControl.errors"
+                   [class.is-valid]="sigInPasswordFormControl.valid && sigInPasswordFormControl.dirty"
+                   [class.is-invalid]="sigInPasswordFormControl.errors && (sigInPasswordFormControl.dirty || signInPasswordForm.submitted)"
+
                    id="validationSignInPassword"
                    type="password"
                    placeholder="password"
@@ -151,14 +152,17 @@
   <ngb-tab>
     <ng-template ngbTabTitle>Register</ng-template>
     <ng-template ngbTabContent>
-      <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
+      <form #signUpPasswordForm="ngForm"
+            [formGroup]="signUpFormGroup"
+            (ngSubmit)="signUpFormGroup.valid &&
           authProcess.signUp
           (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
         <div class="form-group">
           <label for="validationName">First name</label>
           <input class="form-control"
                  [class.is-valid]="sigUpNameFormControl.valid && sigUpNameFormControl.dirty"
-                 [class.is-invalid]="sigUpNameFormControl.errors && sigUpNameFormControl.dirty"
+                 [class.is-invalid]="sigUpNameFormControl.errors
+                  && (sigUpNameFormControl.dirty || signUpPasswordForm.submitted)"
                  id="validationName"
                  type="text"
                  minlength="2"
@@ -167,7 +171,8 @@
                  placeholder="Name"
                  required>
           <div class="invalid-feedback"
-               *ngIf="sigUpNameFormControl.errors && (sigUpNameFormControl.dirty || sigUpNameFormControl.touched)">
+               *ngIf="sigUpNameFormControl.errors
+               && (sigUpNameFormControl.dirty || sigUpNameFormControl.touched || signUpPasswordForm.submitted)">
             <p *ngIf="sigUpNameFormControl.hasError('required')">
               Name is required
             </p>
@@ -184,7 +189,8 @@
           <div class="input-group">
             <input class="form-control"
                    [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
-                   [class.is-invalid]="sigUpEmailFormControl.errors  && sigUpEmailFormControl.dirty"
+                   [class.is-invalid]="sigUpEmailFormControl.errors
+                   && (sigUpEmailFormControl.dirty || signUpPasswordForm.submitted)"
                    id="validationRegisterEmail"
                    [formControl]="sigUpEmailFormControl"
                    placeholder="E-mail"
@@ -194,7 +200,8 @@
 
             <!--error msgs-->
             <div class="invalid-feedback"
-                 *ngIf="sigUpEmailFormControl.errors && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched)">
+                 *ngIf="sigUpEmailFormControl.errors
+                 && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched || signUpPasswordForm.submitted)">
               <p *ngIf="sigUpEmailFormControl.hasError('required')">
                 E-mail is required
               </p>
@@ -210,8 +217,9 @@
           <label for="validationRegisterPassword">Password</label>
           <div class="input-group">
             <input class="form-control"
-                   [class.is-valid]="sigUpPasswordFormControl.valid"
-                   [class.is-invalid]="sigUpPasswordFormControl.errors"
+                   [class.is-valid]="sigUpPasswordFormControl.valid && sigUpPasswordFormControl.dirty"
+                   [class.is-invalid]="sigUpPasswordFormControl.errors
+                   && (sigUpPasswordFormControl.dirty || signUpPasswordForm.submitted)"
                    id="validationRegisterPassword"
                    type="password"
                    placeholder="password"
@@ -226,7 +234,8 @@
             <!--</small>-->
 
             <div class="invalid-feedback"
-                 *ngIf="sigUpPasswordFormControl.errors && (sigUpPasswordFormControl.dirty || sigUpPasswordFormControl.touched)">
+                 *ngIf="sigUpPasswordFormControl.errors
+                  && (sigUpPasswordFormControl.dirty || sigUpPasswordFormControl.touched) || signUpPasswordForm.submitted">
               <p *ngIf="sigUpPasswordFormControl.hasError('required')">
                 Please do not forget the password
               </p>
