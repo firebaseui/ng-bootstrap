@@ -1,20 +1,22 @@
 import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
+import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AuthProcessService} from './services/auth-process.service';
 import {FirestoreSyncService} from './services/firestore-sync.service';
-import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from 'angularfire2';
+import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {defaultAuthFirebaseUIConfig, NgBootstrapAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {AuthComponent} from './components/auth/auth.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 
 // Export module's public API
 // components
 export {AuthComponent} from './components/auth/auth.component';
+export {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
@@ -38,12 +40,14 @@ export const NgBootstrapAuthFirebaseUIConfigToken = new InjectionToken<NgBootstr
   exports:
     [
       AuthComponent,
+      EmailConfirmationComponent,
       AngularFireAuthModule,
       AngularFirestoreModule
     ],
   declarations:
     [
-      AuthComponent
+      AuthComponent,
+      EmailConfirmationComponent
     ]
 })
 export class NgbAuthFirebaseUIModule {

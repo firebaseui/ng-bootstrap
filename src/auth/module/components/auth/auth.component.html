@@ -151,7 +151,6 @@
             </div>
           </div>
         </div>
-
       </form>
     </ng-template>
   </ngb-tab>
@@ -160,138 +159,147 @@
   <ngb-tab>
     <ng-template ngbTabTitle>Register</ng-template>
     <ng-template ngbTabContent>
-      <form #signUpPasswordForm="ngForm"
-            class="mt-3"
-            [formGroup]="signUpFormGroup"
-            (ngSubmit)="signUpFormGroup.valid &&
+      <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>
+      <ng-template #register>
+        <form #signUpPasswordForm="ngForm"
+              class="mt-3"
+              [formGroup]="signUpFormGroup"
+              (ngSubmit)="signUpFormGroup.valid &&
           authProcess.signUp
           (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
-        <div class="form-group">
-          <label for="validationName">First name</label>
-          <input class="form-control"
-                 [class.is-valid]="sigUpNameFormControl.valid && sigUpNameFormControl.dirty"
-                 [class.is-invalid]="sigUpNameFormControl.errors
+          <div class="form-group">
+            <label for="validationName">First name</label>
+            <input class="form-control"
+                   [class.is-valid]="sigUpNameFormControl.valid && sigUpNameFormControl.dirty"
+                   [class.is-invalid]="sigUpNameFormControl.errors
                   && (sigUpNameFormControl.dirty || signUpPasswordForm.submitted)"
-                 id="validationName"
-                 type="text"
-                 minlength="2"
-                 maxlength="30"
-                 [formControl]="sigUpNameFormControl"
-                 placeholder="Name"
-                 required>
-          <div class="invalid-feedback"
-               *ngIf="sigUpNameFormControl.errors
+                   id="validationName"
+                   type="text"
+                   minlength="2"
+                   maxlength="30"
+                   [formControl]="sigUpNameFormControl"
+                   placeholder="Name"
+                   required>
+            <div class="invalid-feedback"
+                 *ngIf="sigUpNameFormControl.errors
                && (sigUpNameFormControl.dirty || sigUpNameFormControl.touched || signUpPasswordForm.submitted)">
-            <p *ngIf="sigUpNameFormControl.hasError('required')">
-              Name is required
-            </p>
-            <p *ngIf="sigUpNameFormControl.hasError('minlength')">
-              The name is too short!
-            </p>
-            <p *ngIf="sigUpNameFormControl.hasError('maxlength')">
-              The name is too long!
-            </p>
+              <p *ngIf="sigUpNameFormControl.hasError('required')">
+                Name is required
+              </p>
+              <p *ngIf="sigUpNameFormControl.hasError('minlength')">
+                The name is too short!
+              </p>
+              <p *ngIf="sigUpNameFormControl.hasError('maxlength')">
+                The name is too long!
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="validationRegisterEmail">E-mail</label>
-          <div class="input-group">
-            <input class="form-control"
-                   [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
-                   [class.is-invalid]="sigUpEmailFormControl.errors
+          <div class="form-group">
+            <label for="validationRegisterEmail">E-mail</label>
+            <div class="input-group">
+              <input class="form-control"
+                     [class.is-valid]="sigUpEmailFormControl.valid && sigUpEmailFormControl.dirty"
+                     [class.is-invalid]="sigUpEmailFormControl.errors
                    && (sigUpEmailFormControl.dirty || signUpPasswordForm.submitted)"
-                   id="validationRegisterEmail"
-                   [formControl]="sigUpEmailFormControl"
-                   placeholder="E-mail"
-                   type="email"
-                   aria-describedby="inputGroupPrepend3"
-                   required>
+                     id="validationRegisterEmail"
+                     [formControl]="sigUpEmailFormControl"
+                     placeholder="E-mail"
+                     type="email"
+                     aria-describedby="inputGroupPrepend3"
+                     required>
 
-            <!--error msgs-->
-            <div class="invalid-feedback"
-                 *ngIf="sigUpEmailFormControl.errors
+              <!--error msgs-->
+              <div class="invalid-feedback"
+                   *ngIf="sigUpEmailFormControl.errors
                  && (sigUpEmailFormControl.dirty || sigUpEmailFormControl.touched || signUpPasswordForm.submitted)">
-              <p *ngIf="sigUpEmailFormControl.hasError('required')">
-                E-mail is required
-              </p>
-              <p *ngIf="sigUpEmailFormControl.hasError('pattern')">
-                Please enter a valid e-mail address
-              </p>
+                <p *ngIf="sigUpEmailFormControl.hasError('required')">
+                  E-mail is required
+                </p>
+                <p *ngIf="sigUpEmailFormControl.hasError('pattern')">
+                  Please enter a valid e-mail address
+                </p>
+              </div>
+
             </div>
-
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="validationRegisterPassword">Password</label>
-          <div class="input-group">
-            <input class="form-control"
-                   [class.is-valid]="sigUpPasswordFormControl.valid && sigUpPasswordFormControl.dirty"
-                   [class.is-invalid]="sigUpPasswordFormControl.errors
+          <div class="form-group">
+            <label for="validationRegisterPassword">Password</label>
+            <div class="input-group">
+              <input class="form-control"
+                     [class.is-valid]="sigUpPasswordFormControl.valid && sigUpPasswordFormControl.dirty"
+                     [class.is-invalid]="sigUpPasswordFormControl.errors
                    && (sigUpPasswordFormControl.dirty || signUpPasswordForm.submitted)"
-                   id="validationRegisterPassword"
-                   type="password"
-                   placeholder="password"
-                   name="password"
-                   [formControl]="sigUpPasswordFormControl"
-                   aria-describedby="inputGroupPrepend4"
-                   required>
+                     id="validationRegisterPassword"
+                     type="password"
+                     placeholder="password"
+                     name="password"
+                     [formControl]="sigUpPasswordFormControl"
+                     aria-describedby="inputGroupPrepend4"
+                     required>
 
-            <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
-            <!--Your password must be 8-25 characters long, contain letters and numbers,-->
-            <!--and must not contain spaces, special characters, or emoji.-->
-            <!--</small>-->
+              <!--<small id="passwordHelpBlock" class="form-text text-muted">-->
+              <!--Your password must be 8-25 characters long, contain letters and numbers,-->
+              <!--and must not contain spaces, special characters, or emoji.-->
+              <!--</small>-->
 
-            <div class="invalid-feedback"
-                 *ngIf="sigUpPasswordFormControl.errors
+              <div class="invalid-feedback"
+                   *ngIf="sigUpPasswordFormControl.errors
                   && (sigUpPasswordFormControl.dirty || sigUpPasswordFormControl.touched) || signUpPasswordForm.submitted">
-              <p *ngIf="sigUpPasswordFormControl.hasError('required')">
-                Please do not forget the password
-              </p>
-              <p *ngIf="sigUpPasswordFormControl.hasError('minlength')">
-                The password must be at least 6 characters
-                long.
-              </p>
-              <p *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
-                The password can not be longer than 25 characters.
-              </p>
-            </div>
+                <p *ngIf="sigUpPasswordFormControl.hasError('required')">
+                  Please do not forget the password
+                </p>
+                <p *ngIf="sigUpPasswordFormControl.hasError('minlength')">
+                  The password must be at least 6 characters
+                  long.
+                </p>
+                <p *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
+                  The password can not be longer than 25 characters.
+                </p>
+              </div>
 
-          </div>
-        </div>
-
-        <!--<div class="form-group">-->
-        <!--<div class="form-check">-->
-        <!--<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>-->
-        <!--<label class="form-check-label" for="invalidCheck3">-->
-        <!--Agree to terms and conditions-->
-        <!--</label>-->
-        <!--<div class="invalid-feedback">-->
-        <!--You must agree before submitting.-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="align-self-start">
-              <button class="btn btn-primary"
-                      type="submit">
-                Register
-              </button>
-            </div>
-            <div class="align-self-end">
-              <button *ngIf="guestEnabled"
-                      class="btn btn-outline-secondary"
-                      (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
-                <i class="fa fa-fingerprint"></i>
-                continue as guest
-              </button>
             </div>
           </div>
-        </div>
-      </form>
+
+          <!--<div class="form-group">-->
+          <!--<div class="form-check">-->
+          <!--<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>-->
+          <!--<label class="form-check-label" for="invalidCheck3">-->
+          <!--Agree to terms and conditions-->
+          <!--</label>-->
+          <!--<div class="invalid-feedback">-->
+          <!--You must agree before submitting.-->
+          <!--</div>-->
+          <!--</div>-->
+          <!--</div>-->
+
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="align-self-start">
+                <button class="btn btn-primary"
+                        type="submit">
+                  Register
+                </button>
+              </div>
+              <div class="align-self-end">
+                <button *ngIf="guestEnabled"
+                        class="btn btn-outline-secondary"
+                        (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
+                  <i class="fa fa-fingerprint"></i>
+                  continue as guest
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </ng-template>
+      <!--confirm template-->
+      <ng-template #confirm>
+        <ngb-auth-firebaseui-email-confirmation [email]="authProcess.emailToConfirm">
+        </ngb-auth-firebaseui-email-confirmation>
+      </ng-template>
     </ng-template>
-  </ngb-tab>
 
+  </ngb-tab>
 </ngb-tabset>
