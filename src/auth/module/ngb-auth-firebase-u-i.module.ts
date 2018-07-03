@@ -12,11 +12,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
+import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 
 // Export module's public API
 // components
 export {AuthComponent} from './components/auth/auth.component';
 export {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
+export {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
@@ -41,13 +43,15 @@ export const NgBootstrapAuthFirebaseUIConfigToken = new InjectionToken<NgBootstr
     [
       AuthComponent,
       EmailConfirmationComponent,
+      ProgressBarComponent,
       AngularFireAuthModule,
       AngularFirestoreModule
     ],
   declarations:
     [
       AuthComponent,
-      EmailConfirmationComponent
+      EmailConfirmationComponent,
+      ProgressBarComponent
     ]
 })
 export class NgbAuthFirebaseUIModule {
