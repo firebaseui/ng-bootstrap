@@ -9,6 +9,7 @@ import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {NgbAuthFirebaseUIModule} from '@firebaseui/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import {MarkdownModule} from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
       storageBucket: 'ng-bootstrap-auth-firebaseui.appspot.com',
       messagingSenderId: '556721943788'
     }),
+    MarkdownModule.forRoot(),
     TransferHttpCacheModule,
     FormsModule,
     HttpClientModule,

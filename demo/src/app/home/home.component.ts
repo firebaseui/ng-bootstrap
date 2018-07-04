@@ -19,4 +19,12 @@ export class HomeComponent implements OnInit {
   editOnStackBlitz() {
     sdk.openGithubProject('AnthonyNahas/@firebaseui/ng-bootstrap/tree/master/demo');
   }
+
+  printUser(event) {
+    console.log('on success: ', event);
+  }
+
+  printError(event) {
+    console.error('on error: ', event);
+  }
 }
