@@ -1,5 +1,6 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/firebaseui/ng-bootstrap/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" 
+  src="https://raw.githubusercontent.com/firebaseui/ng-bootstrap/HEAD/assets/logo.png">
 </p>
 
 # @firebaseui/ng-bootstrap - Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap
@@ -265,7 +266,7 @@ $ npm run lint
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
