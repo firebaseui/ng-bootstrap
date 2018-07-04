@@ -41,9 +41,9 @@
     "@angular/common": "^6.0.7",
     "@angular/core": "^6.0.7",
     "@angular/forms": "^6.0.7",
-    "@ng-bootstrap/ng-bootstrap": "^2.1.2",
+    "@ng-bootstrap/ng-bootstrap": "^2.2.0",
     "angularfire2": "5.0.0-rc.11",
-    "firebase": "^5.1.0",
+    "firebase": "^5.2.0",
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "@angular/platform-browser-dynamic": "^6.0.7",
     "@angular/platform-server": "^6.0.7",
     "@compodoc/gulp-compodoc": "^0.0.9",
-    "@types/jest": "^23.1.3",
+    "@types/jest": "^23.1.4",
     "@types/lodash": "^4.14.110",
     "@types/node": "~10.5.0",
     "angular-cli-ghpages": "^0.5.2",
