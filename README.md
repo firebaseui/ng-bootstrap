@@ -26,10 +26,10 @@ Alternatively, provide a PR | open an appropriate issue [here](https://github.co
 If did you like this project, support [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap) 
 by starring :star: and sharing it :loudspeaker:
 
-If you prefer to develop with material design rather than with bootstrap, please check this project [ngb-auth-firebaseui](https://github.com/AnthonyNahas/ngb-auth-firebaseui)
+If you prefer to develop with material design rather than with bootstrap, please check this project [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 
 ## Table of Contents
-- [@firebaseui/ng-bootstrap :heart: ngb-auth-firebaseui | vs firebaseui-web](#vs)
+- [@firebaseui/ng-bootstrap :heart: ngx-auth-firebaseui | vs firebaseui-web](#vs)
 - [Why to use @firebaseui/ng-bootstrap ?](#@firebaseui/ng-bootstrap)
 - [Library's components](#components)
 - [Supported Providers](#supported-procress-and-actions)
@@ -55,9 +55,9 @@ If you prefer to develop with material design rather than with bootstrap, please
 
 <a name="vs"/>
 
-## ngb-auth-firebaseui vs firebaseui-web
+## ngx-auth-firebaseui vs firebaseui-web
 
-| Features                                                      | @firebaseui/ng-bootstrap    | ngb-auth-firebaseui       | firebaseui  |
+| Features                                                      | @firebaseui/ng-bootstrap    | ngx-auth-firebaseui       | firebaseui  |
 | --------------------------------------------------------------|:-------------:              |:-------------:|           :-------------------:  |
 | Sign Up                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
@@ -90,7 +90,7 @@ If you prefer to develop with material design rather than with bootstrap, please
 | AWESOME                                                       |  :heavy_check_mark:   | :heavy_check_mark:    |  :interrobang:         |
 
 
-<a name="why-to-use-ngb-auth-firebaseui"/>
+<a name="@firebaseui/ng-bootstrap"/>
 
 ## Why to use @firebaseui/ng-boostrap ?
 - :gift_heart: it uses a responsive and accessible web design UX/UI from twitter bootstrap concepts and components (supporting desktop and mobile view).
@@ -152,7 +152,7 @@ If you prefer to develop with material design rather than with bootstrap, please
 
 <a name="demo"/>
 
-##  [Demo](https://ngb-auth-firebaseui.firebaseapp.com/)
+##  [Demo](https://firebaseui.github.io/ng-bootstrap)
 
 - Try it out
 ```js
@@ -373,7 +373,7 @@ $ npm run lint
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [ngb-auth-firebaseui](https://github.com/AnthonyNahas/ngb-auth-firebaseui)
+- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
@@ -387,7 +387,7 @@ $ npm run lint
 ## Support
 + Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
 + or open an appropriate [issue](https://github.com/firebaseui/ng-bootstrap/issues)
-+ let us chat on [Gitter](https://gitter.im/ngb-auth-firebaseui/Lobby)
++ let us chat on [Gitter](https://gitter.im/firebaseui/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
 
