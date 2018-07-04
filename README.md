@@ -15,6 +15,10 @@
 [![Greenkeeper Badge](https://badges.greenkeeper.io/firebaseui/ng-bootstrap.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/firebaseui/ng-bootstrap.svg?style=flat-square)](https://github.com/firebaseui/ng-bootstrap/blob/master/LICENSE)
 
+![firebaseui/ng-bootstrap - sign in, sign up demo image](https://raw.githubusercontent.com/firebaseui/ng-bootstrap/HEAD/assets/v2.0.0/sign_in_up.png)
+![firebaseui/ng-bootstrap - reset password demo image](https://raw.githubusercontent.com/firebaseui/ng-bootstrap/HEAD/assets/v2.0.0/reset_password.png)
+
+
 ## Built by and for developers :heart:
 Do you have any question or suggestion ? Please do not hesitate to contact us!
 Alternatively, provide a PR | open an appropriate issue [here](https://github.com/firebaseui/ng-bootstrap/issues)
@@ -22,8 +26,10 @@ Alternatively, provide a PR | open an appropriate issue [here](https://github.co
 If did you like this project, support [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap) 
 by starring :star: and sharing it :loudspeaker:
 
+If you prefer to develop with material design rather than with bootstrap, please check this project [ngb-auth-firebaseui](https://github.com/AnthonyNahas/ngb-auth-firebaseui)
+
 ## Table of Contents
-- [@firebaseui/ng-bootstrap :heart: ngx-auth-firebaseui | vs firebaseui-web](#vs)
+- [@firebaseui/ng-bootstrap :heart: ngb-auth-firebaseui | vs firebaseui-web](#vs)
 - [Why to use @firebaseui/ng-bootstrap ?](#@firebaseui/ng-bootstrap)
 - [Library's components](#components)
 - [Supported Providers](#supported-procress-and-actions)
@@ -49,9 +55,9 @@ by starring :star: and sharing it :loudspeaker:
 
 <a name="vs"/>
 
-## ngx-auth-firebaseui vs firebaseui-web
+## ngb-auth-firebaseui vs firebaseui-web
 
-| Features                                                      | @firebaseui/ng-bootstrap    | ngx-auth-firebaseui       | firebaseui  |
+| Features                                                      | @firebaseui/ng-bootstrap    | ngb-auth-firebaseui       | firebaseui  |
 | --------------------------------------------------------------|:-------------:              |:-------------:|           :-------------------:  |
 | Sign Up                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
@@ -84,7 +90,7 @@ by starring :star: and sharing it :loudspeaker:
 | AWESOME                                                       |  :heavy_check_mark:   | :heavy_check_mark:    |  :interrobang:         |
 
 
-<a name="why-to-use-ngx-auth-firebaseui"/>
+<a name="why-to-use-ngb-auth-firebaseui"/>
 
 ## Why to use @firebaseui/ng-boostrap ?
 - :gift_heart: it uses a responsive and accessible web design UX/UI from twitter bootstrap concepts and components (supporting desktop and mobile view).
@@ -96,7 +102,7 @@ by starring :star: and sharing it :loudspeaker:
 - :soon: built in feedback mechanism in form of a [alert](https://ng-bootstrap.github.io/#/components/alert/examples) when an error or any important event occurred.
 - :soon: ability to sign out or even to delete totally the account
 - :ghost: your client does not want to create an account in your project? Let him to sign in anonymously!
-- :soon: user profile component to display user's data using <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user> via `ngx-auth-firebaseui-user`
+- :soon: user profile component to display user's data using <ngb-auth-firebaseui-user></ngb-auth-firebaseui-user> via `ngb-auth-firebaseui-user`
 - :zap: update user profile as feature
 - :fire: [Sync user's authentication with FIRESTORE](FIRESTORE_SYNC.md) **AUTOMATICALLY**
 - :muscle: Forgot Password feature! Go and let your users to recover their passwords easily 
@@ -128,7 +134,7 @@ by starring :star: and sharing it :loudspeaker:
 - sign in
 - sign in Anonymously | with google, facebook, twitter, github
 - sign out
-- validation of password's strength while creating a new account using [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength) :soon:
+- validation of password's strength while creating a new account using [ngb-material-password-strength](https://github.com/AnthonyNahas/ngb-material-password-strength) :soon:
 - forgot/reset password
 - sending email verifications
 - delete user's account :soon:
@@ -146,7 +152,7 @@ by starring :star: and sharing it :loudspeaker:
 
 <a name="demo"/>
 
-##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/)
+##  [Demo](https://ngb-auth-firebaseui.firebaseapp.com/)
 
 - Try it out
 ```js
@@ -188,7 +194,14 @@ import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [NgbAuthFirebaseUIModule.forRoot(), ...],  
+  imports: [NgbAuthFirebaseUIModule.forRoot({
+                                             apiKey: 'your-firebase-apiKey',
+                                             authDomain: 'your-firebase-authDomain',
+                                             databaseURL: 'your-firebase-databaseURL',
+                                             projectId: 'your-firebase-projectId',
+                                             storageBucket: 'your-firebase-storageBucket',
+                                             messagingSenderId: 'your-firebase-messagingSenderId'
+                                              }), ...],  
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -208,8 +221,102 @@ export class OtherModule {
 }
 ```
 
+<a name="usage"/>
+
 ## Usage
 
+### `<ngb-auth-firebaseui></ngb-auth-firebaseui>`
+
+```html
+<!-- You can now use the library component in app.component.html  -->
+
+<ngb-auth-firebaseui (onSuccess)="printUser($event)"
+                     (onError)="printError()">
+</ngb-auth-firebaseui>
+```
+or
+```typescript
+<!-- or simply in the app.component.ts -->
+@Component({
+    selector: 'app',
+    template: `
+        <ngb-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngb-auth-firebaseui>`
+})
+class AppComponent {
+
+    printUser(event) {
+        console.log(event);
+    }
+
+    printError(event) {
+        console.error(event);
+    }
+}
+```
+
+### `<ngb-auth-firebaseui-providers></ngb-auth-firebaseui-providers>`
+```html
+<!-- You can now use the library component in app.component.html  -->
+<ngb-auth-firebaseui-providers layout="column"></ngb-auth-firebaseui-providers>
+```
+
+<a name="api"/>
+
+## API
+
+###  `<ngb-auth-firebaseui></ngb-auth-firebaseui>`
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
+| providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
+| onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
+
+
+### How to disable users to sign in and continue as guest, use the `guestEnabled` input
+
+```html
+<ngb-auth-firebaseui [guestEnabled]="false"
+                     (onSuccess)="printUser($event)"
+                     (onError)="printError($event)">
+</ngb-auth-firebaseui>
+```
+
+### How to configure your input providers ? [see the examples](https://ngb-auth-firebaseui.firebaseapp.com/examples)
+e.g:
+in your component, import the AuthProvider enum to pick up your favorite provider:
+
+```typescript
+import {OnInit} from '@angular/core';
+import {AuthProvider} from '@firebaseui/ng-bootstrap';
+
+export class ExampleComponent implements OnInit {
+
+  providers = AuthProvider;
+
+  ngOnInit() {
+  }
+}
+```
+
+in your template -->
+```html
+  <ngb-auth-firebaseui
+  [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
+  (onSuccess)="printUser($event)"
+   (onError)="printError()"></ngb-auth-firebaseui>
+```
+
+or
+
+```html
+  <ngb-auth-firebaseui
+  [providers]="['google', 'facebook', 'twitter']"
+  (onSuccess)="printUser($event)"
+  (onError)="printError()">
+</ngb-auth-firebaseui>
+```
 
 <a name="run-demo-app-locally"/>
 
@@ -219,7 +326,7 @@ export class OtherModule {
 ```bash
 $ git clone https://github.com/firebaseui/ng-bootstrap.git
 ```
-- link the ngx-auth-firebaseui package
+- link the ngb-auth-firebaseui package
 use gulp globally
 ```bash
 $ gulp link
@@ -266,7 +373,7 @@ $ npm run lint
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngb-auth-firebaseui](https://github.com/AnthonyNahas/ngb-auth-firebaseui)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
@@ -280,7 +387,7 @@ $ npm run lint
 ## Support
 + Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
 + or open an appropriate [issue](https://github.com/firebaseui/ng-bootstrap/issues)
-+ let us chat on [Gitter](https://gitter.im/ngx-auth-firebaseui/Lobby)
++ let us chat on [Gitter](https://gitter.im/ngb-auth-firebaseui/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
 
