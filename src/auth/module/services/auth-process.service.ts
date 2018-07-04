@@ -1,4 +1,4 @@
-import {EventEmitter, Inject, Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 import {User, UserInfo} from 'firebase';
 
 import {Accounts} from '../components/enums';
-import {NgBootstrapAuthFirebaseUIConfig, NgBootstrapAuthFirebaseUIConfigToken} from '../../..';
+
 // import User = firebase.User;
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
@@ -35,7 +35,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   emailToConfirm: string;
 
   constructor(public auth: AngularFireAuth,
-              @Inject(NgBootstrapAuthFirebaseUIConfigToken) private config: NgBootstrapAuthFirebaseUIConfig,
               private _fireStoreService: FirestoreSyncService) {
   }
 
@@ -141,10 +140,12 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       await user.sendEmailVerification();
       await this.updateProfile(name, user.photoURL);
       this.emailConfirmationSent = true;
+      console.log('emailConfirmationSent = ', this.emailConfirmationSent);
       this.emailToConfirm = email;
 
       await this.handleSuccess(userCredential);
     } catch (err) {
+      console.error(err);
       this.handleError(err);
     } finally {
       this.isLoading = false;
@@ -206,17 +207,17 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
     await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
 
-    if (this.config.toastMessageOnAuthSuccess) {
+    // if (this.config.toastMessageOnAuthSuccess) {
       // this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
       //   'OK', {duration: 5000});
-    }
+    // }
     this.onSuccessEmitter.next(userCredential.user);
   }
 
   handleError(error: any) {
-    if (this.config.toastMessageOnAuthError) {
+    // if (this.config.toastMessageOnAuthError) {
       // this._snackBar.open(error.message, 'OK', {duration: 5000});
-    }
+    // }
     console.error(error);
     this.onErrorEmitter.next(error);
   }

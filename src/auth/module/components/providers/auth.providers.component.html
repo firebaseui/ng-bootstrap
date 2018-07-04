@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row ">
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            class="btn btn-google my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"
+            (click)="authProcess.signInWith(authProvider.Google)">
+      <span class="fa fa-google"></span>
+      Google
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            class="btn btn-facebook my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"
+            (click)="authProcess.signInWith(authProvider.Facebook)">
+      <span class="fa fa-facebook"></span>
+      Facebook
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            class="btn btn-twitter my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"
+            (click)="authProcess.signInWith(authProvider.Twitter)">
+      <span class="fa fa-twitter"></span>
+      Twitter
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            class="btn btn-github my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"
+            (click)="authProcess.signInWith(authProvider.Github)">
+      <span class="fa fa-github"></span>
+      GitHub
+    </button>
+  </div>
+
+</div>

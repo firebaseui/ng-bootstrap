@@ -1,0 +1,54 @@
+$google: #db4437;
+$facebook: #385899;
+$facebook-hover: #2d4373;
+$twitter: #1da1f2;
+$twitter-hover: #2795e9;
+$github: #444;
+$github-hover: #000000;
+
+:host {
+  display: block;
+}
+
+.space-full-xs {
+  width: 100%;
+  margin: .4rem;
+}
+
+.btn {
+  color: white;
+}
+
+.btn-google {
+  background-color: $google;
+}
+
+.btn-google:hover {
+  background-color: #c23321;
+}
+
+.btn-facebook {
+  background-color: $facebook;
+}
+
+.btn-facebook:hover {
+  background-color: $facebook-hover;
+}
+
+.btn-twitter {
+  background-color: $twitter;
+}
+
+.btn-twitter:hover {
+  background-color: $twitter-hover;
+}
+
+.btn-github {
+  background-color: $github;
+}
+
+.btn-github:hover {
+  background-color: $github-hover;
+}
+
+

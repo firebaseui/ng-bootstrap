@@ -2,13 +2,18 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {DebugElement, EventEmitter} from '@angular/core';
 
 import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuth, AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {AuthComponent, AuthProcessService, FirestoreSyncService} from '../../../..';
-import {NgBootstrapAuthFirebaseUIConfigToken} from '../../ngb-auth-firebase-u-i.module';
-import {defaultAuthFirebaseUIConfig} from '../../interfaces/config.interface';
+import {
+  AuthComponent,
+  AuthProcessService,
+  AuthProvidersComponent,
+  EmailConfirmationComponent,
+  FirestoreSyncService,
+  ProgressBarComponent
+} from '../../../..';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -88,7 +93,13 @@ describe('AuthProvidersComponent', function () {
           FormsModule,
           ReactiveFormsModule
         ],
-      declarations: [AuthComponent],
+      declarations:
+        [
+          AuthComponent,
+          AuthProvidersComponent,
+          EmailConfirmationComponent,
+          ProgressBarComponent
+        ],
       providers: [
         HttpClientTestingModule,
         FirestoreSyncService,
