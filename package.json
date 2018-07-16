@@ -59,7 +59,7 @@
     "@types/node": "~10.5.0",
     "angular-cli-ghpages": "^0.5.2",
     "angular2-template-loader": "^0.6.2",
-    "ansi-colors": "^2.0.2",
+    "ansi-colors": "2.0.2",
     "autoprefixer": "^8.6.4",
     "awesome-typescript-loader": "^5.2.0",
     "codelyzer": "^4.4.2",
