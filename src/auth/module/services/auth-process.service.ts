@@ -208,15 +208,15 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
 
     // if (this.config.toastMessageOnAuthSuccess) {
-      // this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
-      //   'OK', {duration: 5000});
+    // this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
+    //   'OK', {duration: 5000});
     // }
     this.onSuccessEmitter.next(userCredential.user);
   }
 
   handleError(error: any) {
     // if (this.config.toastMessageOnAuthError) {
-      // this._snackBar.open(error.message, 'OK', {duration: 5000});
+    // this._snackBar.open(error.message, 'OK', {duration: 5000});
     // }
     console.error(error);
     this.onErrorEmitter.next(error);
