@@ -44,7 +44,7 @@
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
     "@toverux/ngx-sweetalert2": "^4.0.0",
     "angularfire2": "5.0.0-rc.11",
-    "firebase": "^5.2.0",
+    "firebase": "5.2.0",
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
