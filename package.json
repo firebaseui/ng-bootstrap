@@ -111,6 +111,8 @@
     "node": ">=8.0.0"
   },
   "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
     "preset": "jest-preset-angular",
     "roots": [
       "<rootDir>/src/"
