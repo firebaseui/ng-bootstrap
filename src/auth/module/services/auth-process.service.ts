@@ -13,6 +13,7 @@ import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
+import {AlertService} from './alert.service';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -35,6 +36,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   emailToConfirm: string;
 
   constructor(public auth: AngularFireAuth,
+              public alertService: AlertService,
               private _fireStoreService: FirestoreSyncService) {
   }
 
@@ -49,7 +51,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     return this.auth.auth.sendPasswordResetEmail(email)
       .then(() => {
         this.isLoading = false;
-        console.log('email sent');
         return;
       })
       .catch((error) => {
@@ -106,7 +107,12 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     } catch (err) {
       this.handleError(err);
       console.error(err);
-      // this._snackBar.open(err.message, 'OK', {duration: 5000});
+      this.alertService.onNewAlert.emit(
+        {
+          id: new Date().getTime(),
+          message: err.message,
+          type: 'danger'
+        });
       this.onErrorEmitter.next(err);
     } finally {
       this.isLoading = false;
@@ -127,7 +133,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       this.isLoading = true;
       const userCredential: UserCredential = await this.auth.auth.createUserWithEmailAndPassword(email, password);
       const user = userCredential.user;
-      console.log('onsignUp the user = ', user);
+
       await this._fireStoreService
         .getUserDocRefByUID(user.uid)
         .set({
@@ -140,7 +146,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       await user.sendEmailVerification();
       await this.updateProfile(name, user.photoURL);
       this.emailConfirmationSent = true;
-      console.log('emailConfirmationSent = ', this.emailConfirmationSent);
+
       this.emailToConfirm = email;
 
       await this.handleSuccess(userCredential);
@@ -203,21 +209,25 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   async handleSuccess(userCredential: UserCredential) {
-    console.log('sign in result = ', userCredential);
 
     await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
 
-    // if (this.config.toastMessageOnAuthSuccess) {
-    // this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
-    //   'OK', {duration: 5000});
-    // }
+    this.alertService.onNewAlert.emit(
+      {
+        id: new Date().getTime(),
+        message: `Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
+        type: 'success'
+      });
     this.onSuccessEmitter.next(userCredential.user);
   }
 
   handleError(error: any) {
-    // if (this.config.toastMessageOnAuthError) {
-    // this._snackBar.open(error.message, 'OK', {duration: 5000});
-    // }
+    this.alertService.onNewAlert.emit(
+      {
+        id: new Date().getTime(),
+        message: error.message,
+        type: 'danger'
+      });
     console.error(error);
     this.onErrorEmitter.next(error);
   }

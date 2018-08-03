@@ -1,21 +1,23 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {DebugElement, EventEmitter} from '@angular/core';
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {
+  AlertService,
   AuthComponent,
   AuthProcessService,
   AuthProvidersComponent,
   EmailConfirmationComponent,
-  FirestoreSyncService,
+  FirestoreSyncService, IAlert,
   ProgressBarComponent
 } from '../../../..';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbAlertsContainerComponent} from '../alerts-container/ngb-alerts-container.component';
 
 describe('AuthProvidersComponent', function () {
   let de: DebugElement;
@@ -25,7 +27,7 @@ describe('AuthProvidersComponent', function () {
   let authProcessServicePartial: Partial<AuthProcessService>;
 
   authProcessServicePartial = {
-    onErrorEmitter: new EventEmitter<any>()
+    onErrorEmitter: new EventEmitter<any>(),
   };
 
   const credentialsMock = {
@@ -85,6 +87,11 @@ describe('AuthProvidersComponent', function () {
       })
     });
 
+    const alertServicePartial: Partial<AlertService> = {
+      alerts: [],
+      onNewAlert: new EventEmitter<IAlert>(),
+    };
+
     TestBed.configureTestingModule({
       imports:
         [
@@ -98,12 +105,14 @@ describe('AuthProvidersComponent', function () {
           AuthComponent,
           AuthProvidersComponent,
           EmailConfirmationComponent,
-          ProgressBarComponent
+          ProgressBarComponent,
+          NgbAlertsContainerComponent
         ],
       providers: [
         HttpClientTestingModule,
         FirestoreSyncService,
         AngularFireModule,
+        {provide: AlertService, useValue: alertServicePartial},
         {provide: AngularFirestore, useValue: FirestoreStub},
         {provide: AngularFireAuth, useValue: angularFireAuthStub},
         {provide: AuthProcessService, useValue: authProcessServicePartial}]

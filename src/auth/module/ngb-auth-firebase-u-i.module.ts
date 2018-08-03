@@ -14,6 +14,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
+import {AlertService} from './services/alert.service';
+import {NgbAlertsContainerComponent} from './components/alerts-container/ngb-alerts-container.component';
 
 // Export module's public API
 // components
@@ -21,15 +23,19 @@ export {AuthComponent} from './components/auth/auth.component';
 export {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 export {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 export {AuthProvidersComponent} from './components/providers/auth.providers.component';
+export {NgbAlertsContainerComponent} from './components/alerts-container/ngb-alerts-container.component';
 
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {FirestoreSyncService} from './services/firestore-sync.service';
+export {AlertService} from './services/alert.service';
 
 // interfaces
 export {NgBootstrapAuthFirebaseUIConfig} from './interfaces/config.interface';
+export {IAlert} from './interfaces/ialert.interface';
 
-export const NgBootstrapAuthFirebaseUIConfigToken = new InjectionToken<NgBootstrapAuthFirebaseUIConfig>('NgBootstrapAuthFirebaseUIConfig');
+export const NgBootstrapAuthFirebaseUIConfigToken =
+  new InjectionToken<NgBootstrapAuthFirebaseUIConfig>('NgBootstrapAuthFirebaseUIConfig');
 
 @NgModule({
   imports: [
@@ -46,6 +52,7 @@ export const NgBootstrapAuthFirebaseUIConfigToken = new InjectionToken<NgBootstr
       AuthComponent,
       AuthProvidersComponent,
       EmailConfirmationComponent,
+      NgbAlertsContainerComponent,
       ProgressBarComponent,
       AngularFireAuthModule,
       AngularFirestoreModule
@@ -55,7 +62,8 @@ export const NgBootstrapAuthFirebaseUIConfigToken = new InjectionToken<NgBootstr
       AuthComponent,
       AuthProvidersComponent,
       EmailConfirmationComponent,
-      ProgressBarComponent
+      ProgressBarComponent,
+      NgbAlertsContainerComponent
     ]
 })
 export class NgbAuthFirebaseUIModule {
@@ -79,7 +87,8 @@ export class NgbAuthFirebaseUIModule {
             useValue: config
           },
           AuthProcessService,
-          FirestoreSyncService
+          FirestoreSyncService,
+          AlertService
         ],
     };
   }

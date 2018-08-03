@@ -5,6 +5,7 @@ import {AuthProcessService, AuthProvider} from '../../services/auth-process.serv
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {NgbTabset} from '@ng-bootstrap/ng-bootstrap';
+import {AlertService} from '../../services/alert.service';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -62,7 +63,8 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
               public auth: AngularFireAuth,
-              public authProcess: AuthProcessService) {
+              public authProcess: AuthProcessService,
+              public alertService: AlertService) {
 
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
@@ -89,7 +91,6 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   public resetPassword() {
-    console.log('PasswordResetEmail sent');
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => this.passReset = true);
   }
