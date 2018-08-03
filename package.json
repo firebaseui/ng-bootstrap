@@ -25,7 +25,7 @@
     "register",
     "forgot password",
     "email confirmation",
-    "sign with google-facebook-twitter-githbub"
+    "sign with google facebook twitter githbub"
   ],
   "bugs": {
     "url": "https://github.com/firebaseui/ng-bootstrap/issues"
@@ -38,9 +38,9 @@
     "check-travis": " travis-status --repo=AnthonyNahas/@firebaseui/ng-bootstrap --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/common": "^6.1.0",
-    "@angular/core": "^6.1.0",
-    "@angular/forms": "^6.1.0",
+    "@angular/common": "^6.1.1",
+    "@angular/core": "^6.1.1",
+    "@angular/forms": "^6.1.1",
     "@ng-bootstrap/ng-bootstrap": "^2.2.1",
     "@toverux/ngx-sweetalert2": "^4.0.0",
     "angularfire2": "5.0.0-rc.11",
@@ -48,20 +48,20 @@
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "@angular/animations": "^6.1.0",
-    "@angular/compiler": "^6.1.0",
-    "@angular/compiler-cli": "^6.1.0",
-    "@angular/platform-browser": "^6.1.0",
-    "@angular/platform-browser-dynamic": "^6.1.0",
-    "@angular/platform-server": "^6.1.0",
+    "@angular/animations": "^6.1.1",
+    "@angular/compiler": "^6.1.1",
+    "@angular/compiler-cli": "^6.1.1",
+    "@angular/platform-browser": "^6.1.1",
+    "@angular/platform-browser-dynamic": "^6.1.1",
+    "@angular/platform-server": "^6.1.1",
     "@compodoc/gulp-compodoc": "^0.0.9",
     "@types/jest": "^23.3.1",
-    "@types/lodash": "^4.14.115",
+    "@types/lodash": "^4.14.116",
     "@types/node": "^10.5.5",
     "angular-cli-ghpages": "^0.5.2",
     "angular2-template-loader": "^0.6.2",
     "ansi-colors": "^2.0.5",
-    "autoprefixer": "^9.0.2",
+    "autoprefixer": "^9.1.0",
     "awesome-typescript-loader": "^5.2.0",
     "codelyzer": "^4.4.2",
     "commitplease": "^3.2.0",
