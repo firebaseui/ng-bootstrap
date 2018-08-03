@@ -9,6 +9,7 @@
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://firebaseui.github.io/ng-bootstrap)
 [![Join the chat at https://gitter.im/firebaseui/Lobby](https://badges.gitter.im/firebaseui/Lobby.svg)](https://gitter.im/firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/firebaseui/ng-bootstrap/master.svg?label=circleci)](https://circleci.com/gh/firebaseui/ng-bootstrap)
+[![Build Status](https://travis-ci.org/firebaseui/ng-bootstrap.svg?branch=master)](https://travis-ci.org/firebaseui/ng-bootstrap)
 [![Coverage Status](https://coveralls.io/repos/github/firebaseui/ng-bootstrap/badge.svg?branch=master)](https://coveralls.io/github/firebaseui/ng-bootstrap?branch=master)
 [![dependency Status](https://david-dm.org/firebaseui/ng-bootstrap/status.svg)](https://david-dm.org/firebaseui/ng-bootstrap)
 [![devDependency Status](https://david-dm.org/firebaseui/ng-bootstrap/dev-status.svg?branch=master)](https://david-dm.org/firebaseui/ng-bootstrap#info=devDependencies)
@@ -62,13 +63,13 @@ If you prefer to develop with material design rather than with bootstrap, please
 | Sign Up                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                                       | :heavy_check_mark:  | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In Anonymously                                           | :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
-| Sign In with Google                                           | :soon:  | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Facebook                                         | :soon:  | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Twitter                                          | :soon:  | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Github                                           | :soon:  | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Google                                           | :heavy_check_mark:   | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Facebook                                         | :heavy_check_mark:   | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Twitter                                          | :heavy_check_mark:   | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Github                                           | :heavy_check_mark:   | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with PhoneNumber                                      | :soon:  | :x:                   |  :heavy_check_mark:    |
-| Sign out                                                      | :soon:  | :heavy_check_mark:    |  :x:                   |
-| Sign in/up progress indicator                                 |  :heavy_check_mark: | :heavy_check_mark:    |  :x:                   |
+| Sign out                                                      | :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
+| Sign in/up progress indicator                                 | :heavy_check_mark: | :heavy_check_mark:    |  :x:                   |
 | Password Strength indicator                                   | :soon: | :heavy_check_mark:    |  :x:                   |
 | Forgot/Reset Password                                         | :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
 | Delete account                                                | :soon:  | :heavy_check_mark:    |  :x:                   |
@@ -77,7 +78,7 @@ If you prefer to develop with material design rather than with bootstrap, please
 | Edit user's display name (incl. validation)                   | :soon:  | :heavy_check_mark:    |  :x:                   |
 | Edit user's email (incl. validation)                          | :soon:  | :heavy_check_mark:    |  :x:                   |
 | Edit user's phone number (incl. validation)                   | :soon:  | :heavy_check_mark:    |  :x:                   |
-| Configure your favorite auth provider in runtime              | :soon:  | :heavy_check_mark:    |  :x:                   |
+| Configure your favorite auth provider in runtime              | :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md) |  :heavy_check_mark: | :heavy_check_mark:    |  :x:                   |
 | Angular v2-6 friendly                                         |  :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
 | Internationalization (i18n)                                   |  :soon: @angular v7  | :soon: @angular v7    |  :heavy_check_mark:    |
@@ -87,7 +88,7 @@ If you prefer to develop with material design rather than with bootstrap, please
 | Support Server Side Rendering                                 |  :heavy_check_mark:   | :heavy_check_mark:    |  :x:                   |
 | Support SPA without further config                            |  :heavy_check_mark:  | :heavy_check_mark:    |  :x:                   |
 | Support Safari private browsing                               |  :heavy_check_mark:   | :heavy_check_mark:    |  :x:                   |
-| AWESOME                                                       |  :heavy_check_mark:   | :heavy_check_mark:    |  :interrobang:         |
+| AWESOME                                                       |  :soon:    | :heavy_check_mark:    |  :interrobang:         |
 
 
 <a name="@firebaseui/ng-bootstrap"/>
@@ -121,10 +122,10 @@ If you prefer to develop with material design rather than with bootstrap, please
 ## Supported Providers:
 - anonymously
 - email and password (traditional)
-- google :soon:
-- facebook :soon:
-- twitter :soon:
-- github :soon:
+- google 
+- facebook 
+- twitter 
+- github 
 - phone number :soon:
 
 <a name="supported-procress-and-actions"/>
@@ -135,20 +136,12 @@ If you prefer to develop with material design rather than with bootstrap, please
 - sign in Anonymously | with google, facebook, twitter, github
 - sign out
 - validation of password's strength while creating a new account using [ngb-material-password-strength](https://github.com/AnthonyNahas/ngb-material-password-strength) :soon:
-- forgot/reset password
+- forgot/reset password :soon:
 - sending email verifications
 - delete user's account :soon:
 - edit user's profile like email, name, (profile picture :soon:) and phone number :soon:
 - firestore auto sync :fire:
 
-<a name="requirements"/>
-
-### Requirements:
-- [ng-bootstrap - v2](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
-- [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
-- [angularfire2 - v5.0.0-rc.11](https://www.npmjs.com/package/angularfire2)
-- [firebase - v5.x](https://www.npmjs.com/package/firebase)
-- [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
 
 <a name="demo"/>
 
@@ -162,7 +155,21 @@ if(issues || feedback || you_need_more_features){
 ```
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with v5 and v6)
+* [Angular](https://angular.io) (*requires*)
+
+<a name="requirements"/>
+
+### Requirements:
+- [bootstrap - v4](https://www.npmjs.com/package/bootstrap) 
+- [ng-bootstrap - v2](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
+- [angularfire2 - v5.0.0-rc.11](https://www.npmjs.com/package/angularfire2)
+- [firebase - v5.x](https://www.npmjs.com/package/firebase)
+- [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
+- [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
+
+```shell 
+npm install --save @ng-bootstrap/ng-bootstrap bootstrap angularfire2 firebase font-awesome @angular/forms
+```
 
 ## Installation
 Install above dependencies via *npm*. 
@@ -362,11 +369,6 @@ To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 $ npm run build
 ```
 
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
 ---
 
 
@@ -374,12 +376,14 @@ $ npm run lint
 
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
+- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
+- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
-- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 ---
