@@ -1,5 +1,10 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.1.0...v0.2.0) (2018-08-05)
+
+
+
 <a name="0.1.0"></a>
-# 0.1.0 (2018-08-05)
+# [0.1.0](https://github.com/firebaseui/ng-bootstrap/compare/5508c90...v0.1.0) (2018-08-05)
 
 
 ### Bug Fixes

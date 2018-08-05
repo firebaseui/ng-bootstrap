@@ -1,7 +1,7 @@
 {
   "name": "@firebaseui/ng-bootstrap",
   "description": "Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/firebaseui/ng-bootstrap",
   "author": {
     "name": "Anthony Nahas",
