@@ -1,7 +1,7 @@
 {
   "name": "@firebaseui/ng-bootstrap",
   "description": "Angular Bootstrap UI library for firebase authentication powered by @ng-bootstrap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/firebaseui/ng-bootstrap",
   "author": {
     "name": "Anthony Nahas",
@@ -35,7 +35,7 @@
     "build": "gulp build",
     "test": " gulp test",
     "demo": " gulp build:demo",
-    "check-travis": " travis-status --repo=AnthonyNahas/@firebaseui/ng-bootstrap --branch=master --fail-pending || echo 'Not yet passing'"
+    "check-travis": " travis-status --repo=firebaseui/ng-bootstrap --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
     "@angular/common": "^6.1.1",
