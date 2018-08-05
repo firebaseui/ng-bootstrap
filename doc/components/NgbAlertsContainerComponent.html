@@ -7,13 +7,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">@firebaseui/ng-bootstrap documentation</a>
+            <a href="../" class="navbar-brand">@firebaseui/ng-bootstrap documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -381,36 +381,297 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content modules">
+               <div class="content component">
                    <div class="content-data">
 
 
 
+
 <ol class="breadcrumb">
-    <li>Modules</li>
+  <li>Components</li>
+  <li>NgbAlertsContainerComponent</li>
 </ol>
-<div class="container-fluid modules">
-    <div class="row">
-            <div class="col-sm-4">
-                <div class="card card-module">
-                    <div class="card-header">
-                        <h4 class="card-title">NgbAuthFirebaseUIModule</h4>
-                    </div>
-                    <div class="card-block">
-                                <p>
-                                    <object id="demo-svg" type="image/svg+xml" data="./modules/NgbAuthFirebaseUIModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                            Your browser does not support SVG
-                                    </object>
-                                </p>
-                        <footer class="text-center">
-                            <a href="./modules/NgbAuthFirebaseUIModule.html" class="btn btn-default">Browse</a>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-    </div>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/auth/module/components/alerts-container/ngb-alerts-container.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ngb-alerts-container</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>ngb-alerts-container.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ngb-alerts-container.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#closeAlert">closeAlert</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alerts">alerts</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="alerts"></a>
+                        <code>alerts</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type:</em>    <code><a href="../interfaces/IAlert.html" target="_self" >Array&lt;IAlert&gt;</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value: </em><code>[]</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="closeAlert"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            closeAlert
+                            </b>
+                            <a href="#closeAlert"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>closeAlert(alert: <a href="../interfaces/IAlert.html">IAlert</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>alert</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/IAlert.html" target="_self" >IAlert</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
 </div>
 
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit} from &#x27;@angular/core&#x27;;
+import {IAlert} from &#x27;../../../..&#x27;;
+
+@Component({
+  selector: &#x27;ngb-alerts-container&#x27;,
+  templateUrl: &#x27;./ngb-alerts-container.component.html&#x27;,
+  styleUrls: [&#x27;./ngb-alerts-container.component.scss&#x27;]
+})
+export class NgbAlertsContainerComponent {
+
+  @Input()
+  public alerts: Array&lt;IAlert&gt; &#x3D; [];
+
+  public closeAlert(alert: IAlert) {
+    const index: number &#x3D; this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p *ngFor&#x3D;&quot;let alert of alerts&quot;&gt;
+  &lt;ngb-alert [type]&#x3D;&quot;alert.type&quot; (close)&#x3D;&quot;closeAlert(alert)&quot;&gt;{{ alert.message }}&lt;/ngb-alert&gt;
+&lt;/p&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p *ngFor="let alert of alerts">  <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert></p></div>'
+    var COMPONENTS = [{'name': 'AuthComponent', 'selector': 'ngb-auth-firebaseui'},{'name': 'AuthProvidersComponent', 'selector': 'ngb-auth-firebaseui-providers'},{'name': 'EmailConfirmationComponent', 'selector': 'ngb-auth-firebaseui-email-confirmation'},{'name': 'NgbAlertsContainerComponent', 'selector': 'ngb-alerts-container'},{'name': 'ProgressBarComponent', 'selector': 'ngb-auth-firebaseui-progress-bar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NgbAlertsContainerComponent'};
+</script>
+<script src="../js/tree.js"></script>
 
 
 
@@ -436,30 +697,30 @@
            </div>
        </div>
 
-       <script src="./js/libs/bootstrap-native.js"></script>
+       <script src="../js/libs/bootstrap-native.js"></script>
 
-       <script src="./js/libs/es6-shim.min.js"></script>
-       <script src="./js/libs/EventDispatcher.js"></script>
-       <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
 
-       <script src="./js/compodoc.js"></script>
+       <script src="../js/compodoc.js"></script>
 
         <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'modules';
-            var COMPODOC_CURRENT_PAGE_URL = 'modules.html';
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NgbAlertsContainerComponent.html';
         </script>
 
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
-       <script src="./js/tabs.js"></script>
-       <script src="./js/menu.js"></script>
-       <script src="./js/libs/prism.js"></script>
-       <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
 
 
     </body>

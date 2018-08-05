@@ -86,14 +86,14 @@
                         <a href="modules/NgbAuthFirebaseUIModule.html" data-type="entity-link">NgbAuthFirebaseUIModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgbAuthFirebaseUIModule-20f5ef958ddc8962afbb72a3137c2ebb"
+                                        data-target="#xs-components-links-module-NgbAuthFirebaseUIModule-add3b77488263e16709a796e8fad3257"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgbAuthFirebaseUIModule-20f5ef958ddc8962afbb72a3137c2ebb"
+                                        id="xs-components-links-module-NgbAuthFirebaseUIModule-add3b77488263e16709a796e8fad3257"
                                     >
                                         <li class="link">
                                             <a href="components/AuthComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AuthComponent</a>
@@ -103,6 +103,9 @@
                                         </li>
                                         <li class="link">
                                             <a href="components/EmailConfirmationComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">EmailConfirmationComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/NgbAlertsContainerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NgbAlertsContainerComponent</a>
                                         </li>
                                         <li class="link">
                                             <a href="components/ProgressBarComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProgressBarComponent</a>
@@ -128,6 +131,9 @@
                             id="xs-injectables-links"
                         >
                             <li class="link">
+                                <a href="injectables/AlertService.html" data-type="entity-link">AlertService</a>
+                            </li>
+                            <li class="link">
                                 <a href="injectables/AuthProcessService.html" data-type="entity-link">AuthProcessService</a>
                             </li>
                             <li class="link">
@@ -148,6 +154,9 @@
             <ul class="links collapse"
                     id="xs-interfaces-links"
                 >
+                    <li class="link">
+                        <a href="interfaces/IAlert.html" data-type="entity-link">IAlert</a>
+                    </li>
                     <li class="link">
                         <a href="interfaces/ISignInProcess.html" data-type="entity-link">ISignInProcess</a>
                     </li>
@@ -260,14 +269,14 @@
                         <a href="modules/NgbAuthFirebaseUIModule.html" data-type="entity-link">NgbAuthFirebaseUIModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgbAuthFirebaseUIModule-20f5ef958ddc8962afbb72a3137c2ebb"
+                                        data-target="#components-links-module-NgbAuthFirebaseUIModule-add3b77488263e16709a796e8fad3257"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgbAuthFirebaseUIModule-20f5ef958ddc8962afbb72a3137c2ebb"
+                                        id="components-links-module-NgbAuthFirebaseUIModule-add3b77488263e16709a796e8fad3257"
 >
                                         <li class="link">
                                             <a href="components/AuthComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AuthComponent</a>
@@ -277,6 +286,9 @@
                                         </li>
                                         <li class="link">
                                             <a href="components/EmailConfirmationComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">EmailConfirmationComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/NgbAlertsContainerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NgbAlertsContainerComponent</a>
                                         </li>
                                         <li class="link">
                                             <a href="components/ProgressBarComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProgressBarComponent</a>
@@ -302,6 +314,9 @@
                             id="injectables-links"
 >
                             <li class="link">
+                                <a href="injectables/AlertService.html" data-type="entity-link">AlertService</a>
+                            </li>
+                            <li class="link">
                                 <a href="injectables/AuthProcessService.html" data-type="entity-link">AuthProcessService</a>
                             </li>
                             <li class="link">
@@ -322,6 +337,9 @@
             <ul class="links collapse"
                     id="interfaces-links"
 >
+                    <li class="link">
+                        <a href="interfaces/IAlert.html" data-type="entity-link">IAlert</a>
+                    </li>
                     <li class="link">
                         <a href="interfaces/ISignInProcess.html" data-type="entity-link">ISignInProcess</a>
                     </li>
@@ -761,7 +779,7 @@ export class AuthProvidersComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row ">    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"            class="btn btn-google my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"            (click)="authProcess.signInWith(authProvider.Google)">      <span class="fa fa-google"></span>      Google    </button>    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"            class="btn btn-facebook my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"            (click)="authProcess.signInWith(authProvider.Facebook)">      <span class="fa fa-facebook"></span>      Facebook    </button>    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"            class="btn btn-twitter my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"            (click)="authProcess.signInWith(authProvider.Twitter)">      <span class="fa fa-twitter"></span>      Twitter    </button>    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"            class="btn btn-github my-1 mx-sm-0 col-md-3 col-sm-6 col-xs-12 text-center"            (click)="authProcess.signInWith(authProvider.Github)">      <span class="fa fa-github"></span>      GitHub    </button>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AuthComponent', 'selector': 'ngb-auth-firebaseui'},{'name': 'AuthProvidersComponent', 'selector': 'ngb-auth-firebaseui-providers'},{'name': 'EmailConfirmationComponent', 'selector': 'ngb-auth-firebaseui-email-confirmation'},{'name': 'ProgressBarComponent', 'selector': 'ngb-auth-firebaseui-progress-bar'}];
+    var COMPONENTS = [{'name': 'AuthComponent', 'selector': 'ngb-auth-firebaseui'},{'name': 'AuthProvidersComponent', 'selector': 'ngb-auth-firebaseui-providers'},{'name': 'EmailConfirmationComponent', 'selector': 'ngb-auth-firebaseui-email-confirmation'},{'name': 'NgbAlertsContainerComponent', 'selector': 'ngb-alerts-container'},{'name': 'ProgressBarComponent', 'selector': 'ngb-auth-firebaseui-progress-bar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AuthProvidersComponent'};
 </script>
