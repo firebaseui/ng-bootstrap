@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {sequence, trigger, stagger, animate, style, group, query as q, transition, keyframes, animateChild} from '@angular/animations';
+import {animate, group, query as q, stagger, style, transition, trigger} from '@angular/animations';
 
-const query = (s, a, o = {optional: true}) => q(s, a, o);
+export const query = (s, a, o = {optional: true}) => q(s, a, o);
 
 
 export const routerTransition = trigger('routerTransition', [
@@ -27,7 +27,7 @@ export const routerTransition = trigger('routerTransition', [
       animate('1s ease-in-out', style({transform: 'translateY(0px)', opacity: 1})),
     ]), {optional: true}),
   ])
-])
+]);
 
 const routes: Routes = [
   {
