@@ -10,6 +10,7 @@ import {AppComponent} from './app.component';
 import {NgbAuthFirebaseUIModule} from '@firebaseui/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import {MarkdownModule} from 'ngx-markdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MarkdownModule} from 'ngx-markdown';
     MarkdownModule.forRoot(),
     TransferHttpCacheModule,
     FormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     AppSharedModule,
