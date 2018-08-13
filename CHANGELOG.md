@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.2.0...v0.3.0) (2018-08-13)
+
+
+### Features
+
+* **package:** added animations to the feedback component ([05c7aec](https://github.com/firebaseui/ng-bootstrap/commit/05c7aec))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.1.0...v0.2.0) (2018-08-05)
 
