@@ -521,7 +521,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:38</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -559,7 +559,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/auth/module/components/alerts-container/ngb-alerts-container.component.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -615,11 +615,37 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit} from &#x27;@angular/core&#x27;;
 import {IAlert} from &#x27;../../../..&#x27;;
+import {animate, animateChild, query, stagger, style, transition, trigger} from &#x27;@angular/animations&#x27;;
 
 @Component({
   selector: &#x27;ngb-alerts-container&#x27;,
   templateUrl: &#x27;./ngb-alerts-container.component.html&#x27;,
-  styleUrls: [&#x27;./ngb-alerts-container.component.scss&#x27;]
+  styleUrls: [&#x27;./ngb-alerts-container.component.scss&#x27;],
+
+  animations: [
+    // nice stagger effect when showing existing elements
+    trigger(&#x27;list&#x27;, [
+      transition(&#x27;:enter&#x27;, [
+        // child animation selector + stagger
+        query(&#x27;@alerts&#x27;,
+          stagger(300, animateChild())
+        )
+      ]),
+    ]),
+    trigger(&#x27;alerts&#x27;, [
+      // cubic-bezier for a tiny bouncing feel
+      transition(&#x27;:enter&#x27;, [
+        style({transform: &#x27;scale(0.5)&#x27;, opacity: 0}),
+        animate(&#x27;1s cubic-bezier(.8,-0.6,0.2,1.5)&#x27;,
+          style({transform: &#x27;scale(1)&#x27;, opacity: 1}))
+      ]),
+      transition(&#x27;:leave&#x27;, [
+        style({transform: &#x27;scale(1)&#x27;, opacity: 1, height: &#x27;*&#x27;}),
+        animate(&#x27;1s cubic-bezier(.8,-0.6,0.2,1.5)&#x27;,
+          style({transform: &#x27;scale(0.5)&#x27;, opacity: 0, height: &#x27;0px&#x27;, margin: &#x27;0px&#x27;}))
+      ]),
+    ])
+  ]
 })
 export class NgbAlertsContainerComponent {
 
@@ -635,9 +661,9 @@ export class NgbAlertsContainerComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p *ngFor&#x3D;&quot;let alert of alerts&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div @alerts *ngFor&#x3D;&quot;let alert of alerts&quot;&gt;
   &lt;ngb-alert [type]&#x3D;&quot;alert.type&quot; (close)&#x3D;&quot;closeAlert(alert)&quot;&gt;{{ alert.message }}&lt;/ngb-alert&gt;
-&lt;/p&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -666,7 +692,7 @@ export class NgbAlertsContainerComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p *ngFor="let alert of alerts">  <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert></p></div>'
+        var COMPONENT_TEMPLATE = '<div><div @alerts *ngFor="let alert of alerts">  <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert></div></div>'
     var COMPONENTS = [{'name': 'AuthComponent', 'selector': 'ngb-auth-firebaseui'},{'name': 'AuthProvidersComponent', 'selector': 'ngb-auth-firebaseui-providers'},{'name': 'EmailConfirmationComponent', 'selector': 'ngb-auth-firebaseui-email-confirmation'},{'name': 'NgbAlertsContainerComponent', 'selector': 'ngb-alerts-container'},{'name': 'ProgressBarComponent', 'selector': 'ngb-auth-firebaseui-progress-bar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NgbAlertsContainerComponent'};
