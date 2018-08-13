@@ -349,6 +349,7 @@ gulp.task('rollup-bundle', (cb) => {
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
         '@angular/forms': 'ng.forms',
+        '@angular/animations': 'ng.animations',
 
         // Rxjs dependencies
         'rxjs/Subject': 'Rx',

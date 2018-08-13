@@ -166,9 +166,10 @@ if(issues || feedback || you_need_more_features){
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 - [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
 - [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v6.x](https://www.npmjs.com/package/@angular/animations)
 
 ```shell 
-npm install --save @ng-bootstrap/ng-bootstrap bootstrap angularfire2 firebase font-awesome @angular/forms
+npm install --save @ng-bootstrap/ng-bootstrap bootstrap angularfire2 firebase font-awesome @angular/forms @angular/animations
 ```
 
 ## Installation
