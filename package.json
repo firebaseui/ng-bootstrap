@@ -41,10 +41,9 @@
     "@angular/animations": "^6.1.9",
     "@angular/common": "^6.1.9",
     "@angular/core": "^6.1.9",
+    "@angular/fire": "^5.0.2",
     "@angular/forms": "^6.1.9",
     "@ng-bootstrap/ng-bootstrap": "^2.2.2",
-    "@toverux/ngx-sweetalert2": "^4.0.0",
-    "angularfire2": "5.0.0-rc.11",
     "firebase": "^5.5.2",
     "font-awesome": "^4.7.0"
   },

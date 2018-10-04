@@ -349,6 +349,7 @@ gulp.task('rollup-bundle', (cb) => {
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
         '@angular/forms': 'ng.forms',
+        '@angular/fire': 'ng.fire',
         '@angular/animations': 'ng.animations',
 
         // Rxjs dependencies
@@ -378,7 +379,6 @@ gulp.task('rollup-bundle', (cb) => {
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
         '@ng-bootstrap/ng-bootstrap': _.camelCase('@ng-bootstrap/ng-bootstrap'.replace('/', '.')),
         'font-awesome': _.camelCase('font-awesome'.replace('/', '.')),
-        'angularfire2': _.camelCase('angularfire2'.replace('/', '.')),
         'firebase': _.camelCase('firebase'.replace('/', '.'))
 
       };
