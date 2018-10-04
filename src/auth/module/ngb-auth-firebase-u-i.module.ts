@@ -4,12 +4,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AuthProcessService} from './services/auth-process.service';
 import {FirestoreSyncService} from './services/firestore-sync.service';
-import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {defaultAuthFirebaseUIConfig, NgBootstrapAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {AuthComponent} from './components/auth/auth.component';
 import {HttpClientModule} from '@angular/common/http';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
@@ -40,7 +40,7 @@ export const NgBootstrapAuthFirebaseUIConfigToken =
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule.forRoot(),
+    NgbModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

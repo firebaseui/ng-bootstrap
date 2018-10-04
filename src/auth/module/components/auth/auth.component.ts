@@ -1,6 +1,6 @@
 import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';

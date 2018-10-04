@@ -348,8 +348,11 @@ gulp.task('rollup-bundle', (cb) => {
         // Angular dependencies
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
+        '@angular/common/http': 'ng.common,http',
         '@angular/forms': 'ng.forms',
         '@angular/fire': 'ng.fire',
+        '@angular/fire/firestore': 'ng.fire.firestore',
+        '@angular/fire/auth': 'ng.fire.auth',
         '@angular/animations': 'ng.animations',
 
         // Rxjs dependencies

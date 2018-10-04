@@ -2,10 +2,10 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {DebugElement, EventEmitter} from '@angular/core';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
-import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {
   AlertService,
   AuthComponent,

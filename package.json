@@ -43,7 +43,7 @@
     "@angular/core": "^6.1.9",
     "@angular/fire": "^5.0.2",
     "@angular/forms": "^6.1.9",
-    "@ng-bootstrap/ng-bootstrap": "^2.2.2",
+    "@ng-bootstrap/ng-bootstrap": "^3.2.2",
     "firebase": "^5.5.2",
     "font-awesome": "^4.7.0"
   },

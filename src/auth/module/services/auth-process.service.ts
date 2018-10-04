@@ -1,5 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import * as firebase from 'firebase';
