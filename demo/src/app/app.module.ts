@@ -8,7 +8,7 @@ import {AppSharedModule} from './shared/shared.module';
 import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {NgbAuthFirebaseUIModule} from '@firebaseui/ng-bootstrap';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MarkdownModule} from 'ngx-markdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -27,6 +27,7 @@ import { environment } from '../environments/environment';
     // the page.
     BrowserModule.withServerTransition({appId: 'ng-bootstrap-auth-firebaseui-demo-id'}),
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    MarkdownModule.forRoot({loader: HttpClient}),
     NgbAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyCbLZb4c4g8skCN7li92bG2Wfjw8O4YJoA',
       authDomain: 'ng-bootstrap-auth-firebaseui.firebaseapp.com',
@@ -35,7 +36,6 @@ import { environment } from '../environments/environment';
       storageBucket: 'ng-bootstrap-auth-firebaseui.appspot.com',
       messagingSenderId: '556721943788'
     }),
-    MarkdownModule.forRoot(),
     TransferHttpCacheModule,
     FormsModule,
     BrowserAnimationsModule,
