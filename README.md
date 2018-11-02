@@ -161,12 +161,12 @@ if(issues || feedback || you_need_more_features){
 
 ### Requirements:
 - [bootstrap - v4](https://www.npmjs.com/package/bootstrap) 
-- [ng-bootstrap - v2 | v3](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
-- [@angular/fire - v5.0.2](https://www.npmjs.com/package/@angular/fire)
+- [ng-bootstrap - v4](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
+- [@angular/fire - v5](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 - [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
-- [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v6.x](https://www.npmjs.com/package/@angular/animations)
+- [angular forms - v7.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v7.x](https://www.npmjs.com/package/@angular/animations)
 
 ```shell 
 npm install --save @ng-bootstrap/ng-bootstrap bootstrap @angular/fire firebase font-awesome @angular/forms @angular/animations

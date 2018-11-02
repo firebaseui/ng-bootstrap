@@ -14,8 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {Angulartics2Module} from 'angulartics2';
 import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { environment } from '../environments/environment';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ng-bootstrap-auth-firebaseui-demo-id'}),
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    Angulartics2Module.forRoot(),
     MarkdownModule.forRoot({loader: HttpClient}),
     NgbAuthFirebaseUIModule.forRoot({
       apiKey: 'AIzaSyCbLZb4c4g8skCN7li92bG2Wfjw8O4YJoA',
@@ -43,7 +43,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     AppSharedModule,
     HomeModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent]
