@@ -1,4 +1,13 @@
-<a name="0.3.0"></a>
+# [0.4.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.3.0...v0.4.0) (2018-11-02)
+
+
+### Features
+
+* **demo:** support of prerendering ([6a0feb0](https://github.com/firebaseui/ng-bootstrap/commit/6a0feb0))
+* **package:** support of angular v7 ([0890858](https://github.com/firebaseui/ng-bootstrap/commit/0890858))
+
+
+
 # [0.3.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.2.0...v0.3.0) (2018-08-13)
 
 
@@ -8,12 +17,10 @@
 
 
 
-<a name="0.2.0"></a>
 # [0.2.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.1.0...v0.2.0) (2018-08-05)
 
 
 
-<a name="0.1.0"></a>
 # [0.1.0](https://github.com/firebaseui/ng-bootstrap/compare/5508c90...v0.1.0) (2018-08-05)
 
 
