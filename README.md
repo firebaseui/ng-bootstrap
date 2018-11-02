@@ -161,8 +161,8 @@ if(issues || feedback || you_need_more_features){
 
 ### Requirements:
 - [bootstrap - v4](https://www.npmjs.com/package/bootstrap) 
-- [ng-bootstrap - v2](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
-- [@angular/fire - v5.0.0-rc.11](https://www.npmjs.com/package/@angular/fire)
+- [ng-bootstrap - v2 | v3](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
+- [@angular/fire - v5.0.2](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 - [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
 - [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
@@ -395,6 +395,12 @@ $ npm run build
 + let us chat on [Gitter](https://gitter.im/firebaseui/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
+
+---
+
+![jetbrains logo](https://raw.githubusercontent.com/firebaseui/ng-bootstrap/HEAD/assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+
+This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
 ---
 
