@@ -10,11 +10,18 @@
     "build": "ng build",
     "build:doc": "cd ../ && gulp build:doc",
     "build:prod": "ng build --prod ",
-    "deploy:firebase": "npm run build:prod && npm run build:doc && firebase deploy",
-    "test": "jest",
-    "lint": "ng lint",
+    "build:client-and-server-bundles": "ng build --prod &&  ng run ng-bootstrap-auth-firebaseui-demo:server:production",
+    "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "compile:server": "tsc -p server.tsconfig.json",
     "e2e": "ng e2e",
-    "postinstall": "npm link @firebaseui/ng-bootstrap"
+    "generate:prerender": "cd dist && node prerender",
+    "lint": "ng lint",
+    "test": "ng test",
+    "postinstall": "npm link @firebaseui/ng-bootstrap",
+    "serve:prerender": "cd dist/browser && http-server",
+    "serve:ssr": "node dist/server",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {

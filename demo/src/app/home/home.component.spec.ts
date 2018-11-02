@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HomeComponent} from './home.component';
-import {LibModule} from 'ng-bootstrap-auth-firebaseui';
+import {NgbAuthFirebaseUIModule} from '@firebaseui/ng-bootstrap';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,7 +10,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        LibModule.forRoot(),],
+        NgbAuthFirebaseUIModule.forRoot(null)],
       declarations: [HomeComponent]
     })
       .compileComponents()
