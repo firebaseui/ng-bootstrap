@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "index": "/ng-bootstrap/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ng-bootstrap/4.bbe4d446e9d6586e247d.js",
+        "/ng-bootstrap/favicon.ico",
+        "/ng-bootstrap/index.html",
+        "/ng-bootstrap/main.fb36c8cb91d67af9491e.js",
+        "/ng-bootstrap/polyfills.490b157ce793f8037537.js",
+        "/ng-bootstrap/runtime.1ad0f0ad7365dbaf1fc0.js",
+        "/ng-bootstrap/scripts.afc7ea5d8fc9e4319e5d.js",
+        "/ng-bootstrap/styles.8ca867ca959787227bfa.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ng-bootstrap/assets/.npmignore",
+        "/ng-bootstrap/assets/README.md",
+        "/ng-bootstrap/assets/icons/icon-128x128.png",
+        "/ng-bootstrap/assets/icons/icon-144x144.png",
+        "/ng-bootstrap/assets/icons/icon-152x152.png",
+        "/ng-bootstrap/assets/icons/icon-192x192.png",
+        "/ng-bootstrap/assets/icons/icon-384x384.png",
+        "/ng-bootstrap/assets/icons/icon-512x512.png",
+        "/ng-bootstrap/assets/icons/icon-72x72.png",
+        "/ng-bootstrap/assets/icons/icon-96x96.png",
+        "/ng-bootstrap/assets/logo.svg",
+        "/ng-bootstrap/assets/md/e1/html.md"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ng-bootstrap/4.bbe4d446e9d6586e247d.js": "b3454f89fc56d32abae263dc12f020c031f96a87",
+    "/ng-bootstrap/assets/.npmignore": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "/ng-bootstrap/assets/README.md": "d3195d01e4679efcf97f83ad7625124e4a6a42bb",
+    "/ng-bootstrap/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ng-bootstrap/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ng-bootstrap/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ng-bootstrap/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ng-bootstrap/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ng-bootstrap/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ng-bootstrap/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ng-bootstrap/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ng-bootstrap/assets/logo.svg": "765534075317a076e12de7e81a17a3d9df390a2c",
+    "/ng-bootstrap/assets/md/e1/html.md": "b2211e5dae9a01842615b2b56d084fa99129f7b4",
+    "/ng-bootstrap/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/ng-bootstrap/index.html": "9fb0f48471dac38790ac45c3b8954194782986a6",
+    "/ng-bootstrap/main.fb36c8cb91d67af9491e.js": "25e5d3af14b742e9ebc3a3324aef638ce3c0f776",
+    "/ng-bootstrap/polyfills.490b157ce793f8037537.js": "edc0e79fc6315db4d76b2e7e56702677a06e24c1",
+    "/ng-bootstrap/runtime.1ad0f0ad7365dbaf1fc0.js": "d82135b3cde0bfa64c4e427b5edd6d5457ee8edc",
+    "/ng-bootstrap/scripts.afc7ea5d8fc9e4319e5d.js": "f0bb7899d256fc4983895e3e150609bfbe2ef51c",
+    "/ng-bootstrap/styles.8ca867ca959787227bfa.css": "e9272d551e2228f78220f91d6e4b689fe74fc2ff"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

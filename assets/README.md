@@ -139,7 +139,7 @@ by starring :star: and sharing it :loudspeaker:
 ### Requirements:
 - [ng-bootstrap - v2](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap) 
 - [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
-- [angularfire2 - v5.0.0-rc.11](https://www.npmjs.com/package/angularfire2)
+- [@angular/fire - v5.0.0-rc.11](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 - [font-awesome - v4.x](https://www.npmjs.com/package/font-awesome)
 
