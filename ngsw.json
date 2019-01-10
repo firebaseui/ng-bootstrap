@@ -7,14 +7,14 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/ng-bootstrap/4.bbe4d446e9d6586e247d.js",
+        "/ng-bootstrap/4.d6aa5112e2f145a33db9.js",
         "/ng-bootstrap/favicon.ico",
         "/ng-bootstrap/index.html",
-        "/ng-bootstrap/main.fb36c8cb91d67af9491e.js",
-        "/ng-bootstrap/polyfills.490b157ce793f8037537.js",
-        "/ng-bootstrap/runtime.1ad0f0ad7365dbaf1fc0.js",
-        "/ng-bootstrap/scripts.afc7ea5d8fc9e4319e5d.js",
-        "/ng-bootstrap/styles.8ca867ca959787227bfa.css"
+        "/ng-bootstrap/main.d4d546c8394c993d8001.js",
+        "/ng-bootstrap/polyfills.38a46f560a6c73ffa8d5.js",
+        "/ng-bootstrap/runtime.7090ab28cff05e974d51.js",
+        "/ng-bootstrap/scripts.8d4a677eff1c36c963e1.js",
+        "/ng-bootstrap/styles.0b4a8eb126a085f1072d.css"
       ],
       "patterns": []
     },
@@ -41,7 +41,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/ng-bootstrap/4.bbe4d446e9d6586e247d.js": "b3454f89fc56d32abae263dc12f020c031f96a87",
+    "/ng-bootstrap/4.d6aa5112e2f145a33db9.js": "b3454f89fc56d32abae263dc12f020c031f96a87",
     "/ng-bootstrap/assets/.npmignore": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/ng-bootstrap/assets/README.md": "d3195d01e4679efcf97f83ad7625124e4a6a42bb",
     "/ng-bootstrap/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
@@ -55,12 +55,12 @@
     "/ng-bootstrap/assets/logo.svg": "765534075317a076e12de7e81a17a3d9df390a2c",
     "/ng-bootstrap/assets/md/e1/html.md": "b2211e5dae9a01842615b2b56d084fa99129f7b4",
     "/ng-bootstrap/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/ng-bootstrap/index.html": "9fb0f48471dac38790ac45c3b8954194782986a6",
-    "/ng-bootstrap/main.fb36c8cb91d67af9491e.js": "25e5d3af14b742e9ebc3a3324aef638ce3c0f776",
-    "/ng-bootstrap/polyfills.490b157ce793f8037537.js": "edc0e79fc6315db4d76b2e7e56702677a06e24c1",
-    "/ng-bootstrap/runtime.1ad0f0ad7365dbaf1fc0.js": "d82135b3cde0bfa64c4e427b5edd6d5457ee8edc",
-    "/ng-bootstrap/scripts.afc7ea5d8fc9e4319e5d.js": "f0bb7899d256fc4983895e3e150609bfbe2ef51c",
-    "/ng-bootstrap/styles.8ca867ca959787227bfa.css": "e9272d551e2228f78220f91d6e4b689fe74fc2ff"
+    "/ng-bootstrap/index.html": "5b6f543db260637aa1818357493c2063cea01ac0",
+    "/ng-bootstrap/main.d4d546c8394c993d8001.js": "5beb414275bd3c93bafc3d1e030e3c69831b478b",
+    "/ng-bootstrap/polyfills.38a46f560a6c73ffa8d5.js": "2b95a15fdd977aa43239d0cf03771bfa11a9a493",
+    "/ng-bootstrap/runtime.7090ab28cff05e974d51.js": "a89a58f6e62b4cc46ae4b79fc1a5563bba0f39d6",
+    "/ng-bootstrap/scripts.8d4a677eff1c36c963e1.js": "bccaf7797c4e4fe6c7832ec524be587a9c16e7df",
+    "/ng-bootstrap/styles.0b4a8eb126a085f1072d.css": "2d68b8b70cfe34b595efda322ad9e066b88042d8"
   },
   "navigationUrls": [
     {
