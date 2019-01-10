@@ -1,3 +1,19 @@
+## [0.4.1](https://github.com/firebaseui/ng-bootstrap/compare/v0.4.0...v0.4.1) (2019-01-10)
+
+
+### Bug Fixes
+
+* **demo:** removed unwanted libraries ([8a5994b](https://github.com/firebaseui/ng-bootstrap/commit/8a5994b))
+* **demo:** upgraded angular to v7.2.0 ([455e9b4](https://github.com/firebaseui/ng-bootstrap/commit/455e9b4))
+* **package:** updated dependencies ([6d82574](https://github.com/firebaseui/ng-bootstrap/commit/6d82574))
+
+
+### Features
+
+* **package:** upgraded rollup to v1 ([165d151](https://github.com/firebaseui/ng-bootstrap/commit/165d151))
+
+
+
 # [0.4.0](https://github.com/firebaseui/ng-bootstrap/compare/v0.3.0...v0.4.0) (2018-11-02)
 
 
